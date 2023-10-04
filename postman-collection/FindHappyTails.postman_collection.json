@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "abe17d7c-002c-4a87-a7cb-7cb454db6076",
+		"name": "FindHappyTails",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24939068"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Length",
+						"value": "1kb",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"demo@a.com\",\r\n    \"password\":\"demo1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jbednvgbvd.execute-api.us-east-1.amazonaws.com/login",
+					"protocol": "https",
+					"host": [
+						"jbednvgbvd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
