@@ -20,7 +20,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"demo@a.com\",\r\n    \"password\":\"demo1234\"\r\n}",
+					"raw": "{\r\n    \"email\":\"demo@a.com\",\r\n    \"password\":\"demo1234\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -28,17 +28,45 @@
 					}
 				},
 				"url": {
-					"raw": "https://jbednvgbvd.execute-api.us-east-1.amazonaws.com/login",
-					"protocol": "https",
+					"raw": "{{URL}}/login",
 					"host": [
-						"jbednvgbvd",
-						"execute-api",
-						"us-east-1",
-						"amazonaws",
-						"com"
+						"{{URL}}"
 					],
 					"path": [
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Length",
+						"value": "1kb",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"demo@a.com\",\r\n    \"password\":\"demo1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/register",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"register"
 					]
 				}
 			},
