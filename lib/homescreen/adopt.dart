@@ -30,7 +30,7 @@ class _AdoptState extends State<Adopt> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
 
 

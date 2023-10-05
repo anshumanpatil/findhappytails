@@ -115,7 +115,7 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
 late ColorNotifier notifier;
   @override
@@ -135,138 +135,138 @@ late ColorNotifier notifier;
             //     SizedBox(width: width / 20),
             //   ],
             // ),
-            Row(
-              children: [
-                SizedBox(width: width / 20),
-                Text(
-                  LanguageEn.hello,
-                  style: TextStyle(
-                    color: notifier.getblack,
-                    fontFamily: 'GilroyBold',
-                    fontSize: height / 25,
-                  ),
-                ),
-                SizedBox(width: width / 50),
-                Text(
-                  LanguageEn.wendi,
-                  style: TextStyle(
-                    color:  notifier.getbuttoncolor,
-                    fontFamily: 'GilroyBold',
-                    fontSize: height / 25,
-                  ),
-                )
-              ],
-            ),
-            SizedBox(height: height / 30),
-            Row(
-              children: [
-                SizedBox(width: width / 20),
-                Text(
-                  LanguageEn.whatareyoulookingfor,
-                  style: TextStyle(
-                    color: notifier.getgreay,
-                    fontFamily: 'GilroyMedium',
-                    fontSize: height / 45,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: height / 22),
+            // Row(
+            //   children: [
+            //     SizedBox(width: width / 20),
+            //     Text(
+            //       LanguageEn.hello,
+            //       style: TextStyle(
+            //         color: notifier.getblack,
+            //         fontFamily: 'GilroyBold',
+            //         fontSize: height / 25,
+            //       ),
+            //     ),
+            //     SizedBox(width: width / 50),
+            //     Text(
+            //       LanguageEn.wendi,
+            //       style: TextStyle(
+            //         color:  notifier.getbuttoncolor,
+            //         fontFamily: 'GilroyBold',
+            //         fontSize: height / 25,
+            //       ),
+            //     )
+            //   ],
+            // ),
+            // SizedBox(height: height / 30),
+            // Row(
+            //   children: [
+            //     SizedBox(width: width / 20),
+            //     Text(
+            //       LanguageEn.whatareyoulookingfor,
+            //       style: TextStyle(
+            //         color: notifier.getgreay,
+            //         fontFamily: 'GilroyMedium',
+            //         fontSize: height / 45,
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // SizedBox(height: height / 22),
             const SizedBox(),
-            catogery(),
+            // catogery(),
             // SizedBox(height: height / 60),
-            Row(
-              children: [
-                SizedBox(width: width / 20),
-                Text(
-                  LanguageEn.latestoffers,
-                  style: TextStyle(
-                    color: notifier.getblack,
-                    fontFamily: 'GilroyBold',
-                    fontSize: height / 35,
-                  ),
-                )
-              ],
-            ),
-            SizedBox(height: height / 50),
-            doglatestoffers(),
-            SizedBox(height: height / 30),
-            Row(
-              children: [
-                SizedBox(width: width / 20),
-                Text(
-                  LanguageEn.exploremoreongopet,
-                  style: TextStyle(
-                    color: notifier.getblack,
-                    fontFamily: 'GilroyBold',
-                    fontSize: height / 35,
-                  ),
-                )
-              ],
-            ),
-            SizedBox(height: height / 80),
-            exploremoreongopet(),
-            SizedBox(height: height / 30),
-            Row(
-              children: [
-                SizedBox(width: width / 20),
-                Text(
-                  LanguageEn.bestselingitem,
-                  style: TextStyle(
-                    color: notifier.getblack,
-                    fontFamily: 'GilroyBold',
-                    fontSize: height / 35,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: height / 60),
-            bestsellingitem(),
-            SizedBox(height: height / 45),
-            Row(
-              children: [
-                SizedBox(width: width / 20),
-                Text(
-                  LanguageEn.waitingforyou,
-                  style: TextStyle(
-                    color: notifier.getblack,
-                    fontFamily: 'GilroyBold',
-                    fontSize: height / 35,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: height / 50),
-            waitingforyouitem(),
-            SizedBox(height: height / 30),
-            Row(
-              children: [
-                SizedBox(width: width / 20),
-                Text(
-                  LanguageEn.popular,
-                  style: TextStyle(
-                    color: notifier.getblack,
-                    fontFamily: 'GilroyBold',
-                    fontSize: height / 35,
-                  ),
-                ),
-                const Spacer(),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/ViewAll');
-                  },
-                  child: Text(
-                    LanguageEn.viewall,
-                    style: TextStyle(
-                      color: notifier.getgreay,
-                      fontFamily: 'GilroyMedium',
-                      fontSize: height / 55,
-                    ),
-                  ),
-                ),
-                SizedBox(width: width / 20),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     SizedBox(width: width / 20),
+            //     Text(
+            //       LanguageEn.latestoffers,
+            //       style: TextStyle(
+            //         color: notifier.getblack,
+            //         fontFamily: 'GilroyBold',
+            //         fontSize: height / 35,
+            //       ),
+            //     )
+            //   ],
+            // ),
+            // SizedBox(height: height / 50),
+            // doglatestoffers(),
+            // SizedBox(height: height / 30),
+            // Row(
+            //   children: [
+            //     SizedBox(width: width / 20),
+            //     Text(
+            //       LanguageEn.exploremoreongopet,
+            //       style: TextStyle(
+            //         color: notifier.getblack,
+            //         fontFamily: 'GilroyBold',
+            //         fontSize: height / 35,
+            //       ),
+            //     )
+            //   ],
+            // ),
+            // SizedBox(height: height / 80),
+            // exploremoreongopet(),
+            // SizedBox(height: height / 30),
+            // Row(
+            //   children: [
+            //     SizedBox(width: width / 20),
+            //     Text(
+            //       LanguageEn.bestselingitem,
+            //       style: TextStyle(
+            //         color: notifier.getblack,
+            //         fontFamily: 'GilroyBold',
+            //         fontSize: height / 35,
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // SizedBox(height: height / 60),
+            // bestsellingitem(),
+            // SizedBox(height: height / 45),
+            // Row(
+            //   children: [
+            //     SizedBox(width: width / 20),
+            //     Text(
+            //       LanguageEn.waitingforyou,
+            //       style: TextStyle(
+            //         color: notifier.getblack,
+            //         fontFamily: 'GilroyBold',
+            //         fontSize: height / 35,
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // SizedBox(height: height / 50),
+            // waitingforyouitem(),
+            // SizedBox(height: height / 30),
+            // Row(
+            //   children: [
+            //     SizedBox(width: width / 20),
+            //     Text(
+            //       LanguageEn.popular,
+            //       style: TextStyle(
+            //         color: notifier.getblack,
+            //         fontFamily: 'GilroyBold',
+            //         fontSize: height / 35,
+            //       ),
+            //     ),
+            //     const Spacer(),
+            //     GestureDetector(
+            //       onTap: () {
+            //         Navigator.pushNamed(context, '/ViewAll');
+            //       },
+            //       child: Text(
+            //         LanguageEn.viewall,
+            //         style: TextStyle(
+            //           color: notifier.getgreay,
+            //           fontFamily: 'GilroyMedium',
+            //           fontSize: height / 55,
+            //         ),
+            //       ),
+            //     ),
+            //     SizedBox(width: width / 20),
+            //   ],
+            // ),
             SizedBox(height: height / 50),
             GestureDetector(
               onTap: () {

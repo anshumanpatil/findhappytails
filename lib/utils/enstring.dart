@@ -1,14 +1,14 @@
 class LanguageEn {
   static String get yourpetispartofourfamily =>
-      "Your pet is part of our family";
+      "Absolutely right decision to add pet in family.";
 
-  static String get petdeservesmorecare => "Welcome to our\napp";
+  static String get petdeservesmorecare => "Welcome to \nFindHappyTails";
 
   static String get findyournewfriend =>
       "Find the nearest pet\nfrom your location";
 
   static String get donthaveapetfindyour =>
-      "Choose a location of your for finding\nthe nearest animals for you";
+      "Choose a location of your for finding\nthe nearest pure love for you";
 
   static String get allpetneedsarehere => "Make\nnew friend";
 
@@ -16,7 +16,7 @@ class LanguageEn {
       "Here you can meet your dream friends and\njoy with them";
 
   static String get weprovideallservices =>
-      "With our app you'll make life of our\nfurry friends happier";
+      "With FindHappyTails you'll make life of one\nmore tail happier";
 
   static String get next => "Next";
   static String get darkmode => "Dark Mode";

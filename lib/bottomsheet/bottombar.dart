@@ -25,10 +25,11 @@ class _BottomhomeState extends State<Bottomhome> {
   String? name;
   DateTime? currentBackPressTime;
   bool shouldPop = false;
-  //
+
   // void _onItemTapped(int index) {
   //   setState(() {
   //     _selectedIndex = index;
+  //     print(_selectedIndex);
   //   });
   // }
 late ColorNotifier notifier;
@@ -55,7 +56,7 @@ late ColorNotifier notifier;
     width = MediaQuery.of(context).size.width;
     final _pageOption = [
       const Home(),
-      const Orders(),
+      // const Orders(),
       const Pets(),
       const User()
     ];
@@ -83,24 +84,24 @@ late ColorNotifier notifier;
             ),
             selectedColor: buttoncolor,
           ),
-          SalomonBottomBarItem(
-              icon: Image.asset(
-                "assets/orders.png",
-                height: height / 40,
-                color: _selectedIndex == 1 ? Colors.white : Colors.grey,
-              ),
-              title: Text(
-                LanguageEn.order,
-                style: TextStyle(
-                    fontSize: height / 60,
-                    color: Colors.white,
-                    fontFamily: 'GilroyBold'),
-              ),
-              selectedColor: buttoncolor),
+          // SalomonBottomBarItem(
+          //     icon: Image.asset(
+          //       "assets/orders.png",
+          //       height: height / 40,
+          //       color: _selectedIndex == 1 ? Colors.white : Colors.grey,
+          //     ),
+          //     title: Text(
+          //       LanguageEn.order,
+          //       style: TextStyle(
+          //           fontSize: height / 60,
+          //           color: Colors.white,
+          //           fontFamily: 'GilroyBold'),
+          //     ),
+          //     selectedColor: buttoncolor),
           SalomonBottomBarItem(
             icon: Image.asset("assets/pets.png",
                 height: height / 40,
-                color: _selectedIndex == 2 ? Colors.white : Colors.grey),
+                color: _selectedIndex == 1 ? Colors.white : Colors.grey),
             title: Text(
               LanguageEn.pets,
               style: TextStyle(
@@ -113,7 +114,7 @@ late ColorNotifier notifier;
           SalomonBottomBarItem(
             icon: Image.asset("assets/user.png",
                 height: height / 40,
-                color: _selectedIndex == 3 ? Colors.white : Colors.grey),
+                color: _selectedIndex == 2 ? Colors.white : Colors.grey),
             title: Text(
               LanguageEn.user,
               style: TextStyle(
