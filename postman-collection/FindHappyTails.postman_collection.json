@@ -37,7 +37,75 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Length",
+								"value": "1kb",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"demo@a.com\",\r\n    \"password\":\"demo1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 05 Oct 2023 18:03:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "113"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"71-/MHjNPgWWoJYTxMIok7IrCKhaKU\""
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "MVwN6jEmoAMEJWA="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"651db183fd3c3acce0db88db\",\n    \"email\": \"demo@a.com\",\n    \"password\": \"demo1234\",\n    \"userid\": \"651db183fd3c3acce0db88db\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Register",
