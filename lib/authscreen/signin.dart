@@ -1,3 +1,4 @@
+import 'package:findhappytails/controllers/logincontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:findhappytails/custtomscreen/appbar.dart';
 import 'package:findhappytails/custtomscreen/button.dart';
@@ -7,6 +8,7 @@ import 'package:findhappytails/utils/enstring.dart';
 import 'package:findhappytails/utils/mediaqury.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:get/get.dart';
 
 import '../custtomscreen/textfild.dart';
 
@@ -18,29 +20,32 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  final loginController = Get.put(LoginController());
+
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
+
   late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
     notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
       backgroundColor: notifier.getwihite,
-      appBar: CustomAppBar( LanguageEn.signin),
+      appBar: CustomAppBar(LanguageEn.signin),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -50,7 +55,7 @@ class _SignInState extends State<SignIn> {
                 Text(
                   LanguageEn.loginwithyouraccount,
                   style: TextStyle(
-                    color:  notifier.getgreay,
+                    color: notifier.getgreay,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 50,
                   ),
@@ -72,7 +77,35 @@ class _SignInState extends State<SignIn> {
               ],
             ),
             SizedBox(height: height / 100),
-            CustoomTextfild(LanguageEn.emailaddress),
+            Container(
+              color: Colors.transparent,
+              height: height / 13,
+              width: width / 1.1,
+              child: TextField(
+                controller: loginController.loginEmailController,
+                style: TextStyle(color: notifier.getblack),
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.only(left: 10),
+                  hintText: "Email ID",
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: 'GilroyMedium',
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Color(0xffE0E0E0),
+                    ),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Color(0xffE0E0E0),
+                    ),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
+              ),
+            ),
             SizedBox(height: height / 70),
             Row(
               children: [
@@ -88,7 +121,35 @@ class _SignInState extends State<SignIn> {
               ],
             ),
             SizedBox(height: height / 100),
-            PasswordCustoomTextfild(LanguageEn.password),
+            Container(
+              color: Colors.transparent,
+              height: height / 13,
+              width: width / 1.1,
+              child: TextField(
+                controller: loginController.loginPasswordController,
+                style: TextStyle(color: notifier.getblack),
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.only(left: 10),
+                  hintText: "Password",
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: 'GilroyMedium',
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Color(0xffE0E0E0),
+                    ),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Color(0xffE0E0E0),
+                    ),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
+              ),
+            ),
             SizedBox(height: height / 200),
             Row(
               children: [
@@ -108,10 +169,14 @@ class _SignInState extends State<SignIn> {
                 )
               ],
             ),
-          SizedBox(height: height/3.3),
+            SizedBox(height: height / 3.3),
             GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/Bottomhome');
+              onTap: () async {
+                var loginResult = await loginController.login();
+                if(loginResult) {
+                  Navigator.pushNamed(context, '/Bottomhome');
+                }
+                //
               },
               child: Custombutton.button(
                 LanguageEn.login,
@@ -140,7 +205,7 @@ class _SignInState extends State<SignIn> {
                   child: Text(
                     LanguageEn.register,
                     style: TextStyle(
-                      color:  notifier.getbuttoncolor,
+                      color: notifier.getbuttoncolor,
                       fontSize: height / 55,
                       fontFamily: 'GilroyBold',
                     ),

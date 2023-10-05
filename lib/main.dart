@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+
 import 'package:findhappytails/authscreen/forgotpassword.dart';
 import 'package:findhappytails/authscreen/signin.dart';
 import 'package:findhappytails/bottomsheet/bottombar.dart';
@@ -40,11 +43,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    EasyLoading.instance
+      ..loadingStyle = EasyLoadingStyle.custom
+      ..backgroundColor = Colors.white
+      ..textColor = Colors.black
+      ..indicatorColor = Colors.green;
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ColorNotifier()),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
+        builder: EasyLoading.init(),
 
         debugShowCheckedModeBanner: false,
         routes: {
