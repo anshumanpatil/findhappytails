@@ -15,40 +15,55 @@ class Welcome extends StatefulWidget {
 
 class _WelcomeState extends State<Welcome> {
   late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // late bool isUserLoggedIn;
+  // checkLoginStatus() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   String? token = prefs.getString("token");
+  //   print("SharedPreferences token ${token}");
+  //   if (token == null) {
+  //     isUserLoggedIn = false;
+  //   } else {
+  //     isUserLoggedIn = true;
+  //   }
+  // }
+
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
+    // checkLoginStatus();
   }
+
   @override
   Widget build(BuildContext context) {
     notifier = Provider.of<ColorNotifier>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
-    return Scaffold(backgroundColor: notifier.getwihite,
+    return Scaffold(
+      backgroundColor: notifier.getwihite,
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: height / 8),
             Center(
-              child: Image.asset("assets/loginsignselectlogo.png", height: height / 3),
+              child: Image.asset("assets/loginsignselectlogo.png",
+                  height: height / 3),
             ),
             SizedBox(height: height / 15),
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/SignIn');
-
               },
               child: button(
                 LanguageEn.continueswithgoogle,
@@ -64,7 +79,6 @@ class _WelcomeState extends State<Welcome> {
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/SignIn');
-
               },
               child: button(
                 LanguageEn.continueswithfacebook,
@@ -80,7 +94,6 @@ class _WelcomeState extends State<Welcome> {
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/SignIn');
-
               },
               child: button(
                 LanguageEn.registerwithemail,
@@ -111,7 +124,7 @@ class _WelcomeState extends State<Welcome> {
                   child: Text(
                     LanguageEn.signin,
                     style: TextStyle(
-                      color:  notifier.getbuttoncolor,
+                      color: notifier.getbuttoncolor,
                       fontSize: height / 55,
                       fontFamily: 'GilroyBold',
                     ),

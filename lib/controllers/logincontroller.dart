@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:findhappytails/models/loginresult.dart';
 import 'package:findhappytails/constants.dart' as Constants;
@@ -19,15 +20,15 @@ class LoginController extends GetxController {
     }
     EasyLoading.show(status: 'Login...');
 
-
     try {
       var callLoginResponse = await fetchResult(loginEmailController.text, loginPasswordController.text);
-
-      print("callLoginResponse userid ${callLoginResponse.userid}");
-      print("Email ${loginEmailController.text}");
-      print("Password ${loginPasswordController.text}");
+      final prefs = await SharedPreferences.getInstance();
+      final setTokenStatus = await prefs.setString("token", callLoginResponse.token);
+      // print("callLoginResponse userid ${callLoginResponse.token}");
+      // print("Email ${loginEmailController.text}");
+      // print("Password ${loginPasswordController.text}");
       Get.snackbar('Login', 'Login Succesful.');
-      return Future.value(true);
+      return Future.value(setTokenStatus);
     } catch(e) {
       Get.snackbar('Login', 'Error occured while logging in.');
       return Future.value(false);

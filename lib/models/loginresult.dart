@@ -1,34 +1,37 @@
 
 import 'dart:convert';
-// {
-// "_id": "651db183fd3c3acce0db88db",
-// "email": "demo@a.com",
-// "password": "demo1234",
-// "userid": "651db183fd3c3acce0db88db"
-// }
+
 class LoginResult {
-  String id;
+  String token;
   String email;
-  String userid;
+  String name;
+  String mobile;
+  String status;
 
   LoginResult({
-    required this.id,
+    required this.token,
     required this.email,
-    required this.userid,
+    required this.name,
+    required this.mobile,
+    required this.status,
   });
 
   Map<String, dynamic> toJson() => {
-    "id": id,
+    "token": token,
     "email": email,
-    "userid": userid,
+    "name": name,
+    "mobile": mobile,
+    "status": status,
   };
 
   factory LoginResult.fromJson(dynamic json) {
 
     return LoginResult(
-      id: jsonDecode(json)['_id'],
+      token: jsonDecode(json)['token'],
       email: jsonDecode(json)['email'],
-      userid: jsonDecode(json)['userid'],
+      name: jsonDecode(json)['name'],
+      mobile: jsonDecode(json)['mobile'],
+      status: jsonDecode(json)['status'],
     );
   }
 }

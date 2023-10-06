@@ -16,23 +16,25 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
     Timer(
       const Duration(seconds : 4),
-          () => Navigator.pushReplacementNamed(context,  "/Onbonding")
+          () => {
+            Navigator.pushReplacementNamed(context,  "/Onbonding")
+          }
     );
   }
 late ColorNotifier notifier;

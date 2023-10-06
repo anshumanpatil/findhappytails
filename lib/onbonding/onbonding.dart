@@ -17,17 +17,27 @@ class Onbonding extends StatefulWidget {
 
 class _OnbondingState extends State<Onbonding> {
   final int _numPages = 3;
-  getdarkmodepreviousstate() async {
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
+
+  late bool isUserLoggedIn;
+  checkLoginStatus() async {
     final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
+    String? token = prefs.getString("token");
+    print("SharedPreferences in Onbonding token ${token}");
+    if (token == null) {
+      isUserLoggedIn = false;
     } else {
-      notifier.setIsDark = previusstate;
+      isUserLoggedIn = true;
     }
   }
-
-
 
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
@@ -44,7 +54,8 @@ class _OnbondingState extends State<Onbonding> {
 
   @override
   void initState() {
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
+    checkLoginStatus();
     isLoading = true;
     Future.delayed(const Duration(seconds: 2), () {
       setState(() {
@@ -66,7 +77,8 @@ class _OnbondingState extends State<Onbonding> {
       ),
     );
   }
-late ColorNotifier notifier;
+
+  late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
     notifier = Provider.of<ColorNotifier>(context, listen: true);
@@ -109,7 +121,8 @@ late ColorNotifier notifier;
                                         height: height / 2),
                                     SizedBox(height: height / 50),
                                     Text(
-                                      LanguageEn.petdeservesmorecare,textAlign: TextAlign.center,
+                                      LanguageEn.petdeservesmorecare,
+                                      textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyBold',
                                           color: notifier.getblack,
@@ -143,7 +156,8 @@ late ColorNotifier notifier;
                                         height: height / 2),
                                     SizedBox(height: height / 50),
                                     Text(
-                                      LanguageEn.findyournewfriend,textAlign: TextAlign.center,
+                                      LanguageEn.findyournewfriend,
+                                      textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyBold',
                                           color: notifier.getblack,
@@ -172,12 +186,13 @@ late ColorNotifier notifier;
                               Center(
                                 child: Column(
                                   children: [
-                                    SizedBox(height: height /10),
+                                    SizedBox(height: height / 10),
                                     Image.asset("assets/onbondingthree.png",
                                         height: height / 2),
                                     SizedBox(height: height / 50),
                                     Text(
-                                      LanguageEn.allpetneedsarehere,textAlign: TextAlign.center,
+                                      LanguageEn.allpetneedsarehere,
+                                      textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyBold',
                                           color: notifier.getblack,
@@ -269,7 +284,12 @@ late ColorNotifier notifier;
                                 _pageController.nextPage(
                                     duration: const Duration(microseconds: 300),
                                     curve: Curves.easeIn);
-                                Navigator.pushNamed(context, '/Welcome');
+                                print("Now ${isUserLoggedIn.toString()} is isUserLoggedIn");
+                                if (!isUserLoggedIn) {
+                                  Navigator.pushNamed(context, '/Welcome');
+                                } else {
+                                  Navigator.pushNamed(context, '/Bottomhome');
+                                }
                               },
                               child: Center(
                                 child: Custombutton.button(

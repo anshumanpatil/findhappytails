@@ -9,7 +9,11 @@ var userSchema = new mongoose.Schema({
     password: String,
     name: String,
     mobile: String,
-    status: String,
+    status: {
+        type: String,
+        enum : ['Active', 'Inactive'],
+        default: 'Active'
+    },
     created_at: Date,
     updated_at: Date
 }, { versionKey: false });

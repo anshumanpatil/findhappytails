@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 let conn = null;
 const getProdURI = () => {
-  const username = encodeURIComponent("appadmin");
-  const password = encodeURIComponent("Yajju@1506");
-  return `mongodb+srv://${username}:${password}@mobapp.i1ctwtf.mongodb.net/tails`;
+  const username = encodeURIComponent(process.env.DB_USERNAME);
+  const password = encodeURIComponent(process.env.DB_PASSWORD);
+  return `mongodb+srv://${username}:${password}@${process.env.DB_URL}/${process.env.DB_TABLE}`;
 }
 
 const uri = process.env.NODE_ENV=='lambda' ? getProdURI() : `mongodb://localhost:27017/tails`;
-
+console.log("uri", uri);
 exports.connect = async function() {
   if (conn == null) {
     conn = mongoose.connect(uri, {
