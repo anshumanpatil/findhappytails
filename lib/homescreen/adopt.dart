@@ -16,15 +16,15 @@ class Adopt extends StatefulWidget {
 class _AdoptState extends State<Adopt> {
 
 
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
@@ -35,13 +35,13 @@ class _AdoptState extends State<Adopt> {
 
 
   List interest = ["image/fitness.png", "image/cooking.png", "image/video.png"];
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
 
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
 
     );
   }
@@ -88,7 +88,7 @@ class _AdoptState extends State<Adopt> {
           SizedBox(height: height / 45),
           Text(
             year,
-            style: TextStyle(color: notifier.getblack,
+            style: TextStyle(color: Colors.black,
               fontSize: height / 40,
               fontFamily: 'GilroyBold',
             ),
@@ -97,7 +97,7 @@ class _AdoptState extends State<Adopt> {
           Text(
             subtitle,
             style: TextStyle(
-              color: notifier.getblack,
+              color: Colors.black,
               fontSize: height / 50,
               fontFamily: 'GilroyMedium',
             ),

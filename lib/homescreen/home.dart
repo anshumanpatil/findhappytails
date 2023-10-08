@@ -101,15 +101,15 @@ class _HomeState extends State<Home> {
     "assets/emog3.png",
     "assets/emog4.png",
   ];
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
@@ -117,12 +117,12 @@ class _HomeState extends State<Home> {
     super.initState();
     // getdarkmodepreviousstate();
   }
-late ColorNotifier notifier;
+//late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -141,7 +141,7 @@ late ColorNotifier notifier;
             //     Text(
             //       LanguageEn.hello,
             //       style: TextStyle(
-            //         color: notifier.getblack,
+            //         color: Colors.black,
             //         fontFamily: 'GilroyBold',
             //         fontSize: height / 25,
             //       ),
@@ -150,7 +150,7 @@ late ColorNotifier notifier;
             //     Text(
             //       LanguageEn.wendi,
             //       style: TextStyle(
-            //         color:  notifier.getbuttoncolor,
+            //         color:  const Color(0xffFC9340),
             //         fontFamily: 'GilroyBold',
             //         fontSize: height / 25,
             //       ),
@@ -164,7 +164,7 @@ late ColorNotifier notifier;
             //     Text(
             //       LanguageEn.whatareyoulookingfor,
             //       style: TextStyle(
-            //         color: notifier.getgreay,
+            //         color: Colors.grey,
             //         fontFamily: 'GilroyMedium',
             //         fontSize: height / 45,
             //       ),
@@ -181,7 +181,7 @@ late ColorNotifier notifier;
             //     Text(
             //       LanguageEn.latestoffers,
             //       style: TextStyle(
-            //         color: notifier.getblack,
+            //         color: Colors.black,
             //         fontFamily: 'GilroyBold',
             //         fontSize: height / 35,
             //       ),
@@ -197,7 +197,7 @@ late ColorNotifier notifier;
             //     Text(
             //       LanguageEn.exploremoreongopet,
             //       style: TextStyle(
-            //         color: notifier.getblack,
+            //         color: Colors.black,
             //         fontFamily: 'GilroyBold',
             //         fontSize: height / 35,
             //       ),
@@ -213,7 +213,7 @@ late ColorNotifier notifier;
             //     Text(
             //       LanguageEn.bestselingitem,
             //       style: TextStyle(
-            //         color: notifier.getblack,
+            //         color: Colors.black,
             //         fontFamily: 'GilroyBold',
             //         fontSize: height / 35,
             //       ),
@@ -229,7 +229,7 @@ late ColorNotifier notifier;
             //     Text(
             //       LanguageEn.waitingforyou,
             //       style: TextStyle(
-            //         color: notifier.getblack,
+            //         color: Colors.black,
             //         fontFamily: 'GilroyBold',
             //         fontSize: height / 35,
             //       ),
@@ -245,7 +245,7 @@ late ColorNotifier notifier;
             //     Text(
             //       LanguageEn.popular,
             //       style: TextStyle(
-            //         color: notifier.getblack,
+            //         color: Colors.black,
             //         fontFamily: 'GilroyBold',
             //         fontSize: height / 35,
             //       ),
@@ -258,7 +258,7 @@ late ColorNotifier notifier;
             //       child: Text(
             //         LanguageEn.viewall,
             //         style: TextStyle(
-            //           color: notifier.getgreay,
+            //           color: Colors.grey,
             //           fontFamily: 'GilroyMedium',
             //           fontSize: height / 55,
             //         ),
@@ -381,12 +381,12 @@ late ColorNotifier notifier;
                             height: height / 20,
                             width: width / 9,
                             decoration: BoxDecoration(
-                              color: notifier.getwihite,
+                              color: Colors.white,
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
-                              child: Image.asset(shopcatogeryimagelist[index],color: notifier.getblack,
+                              child: Image.asset(shopcatogeryimagelist[index],color: Colors.black,
                                   height: height / 40),
                             ),
                           ),
@@ -533,7 +533,7 @@ late ColorNotifier notifier;
                         Text(
                           bestsellingitemtitle[index],
                           style: TextStyle(
-                            color: notifier.getblack,
+                            color: Colors.black,
                             fontSize: height / 55,
                             fontFamily: 'GilroyBold',
                           ),
@@ -551,7 +551,7 @@ late ColorNotifier notifier;
                         Text(
                           dogsubnamewaitingforyou[index],
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 55,
                             fontFamily: 'GilroyBold',
                           ),
@@ -565,7 +565,7 @@ late ColorNotifier notifier;
                         Text(
                           waitingforyouyear[index],
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 55,
                             fontFamily: 'GilroyBold',
                           ),
@@ -638,7 +638,7 @@ late ColorNotifier notifier;
                         Text(
                           bestsellingitemtitle[index],
                           style: TextStyle(
-                            color: notifier.getblack,
+                            color: Colors.black,
                             fontSize: height / 55,
                             fontFamily: 'GilroyBold',
                           ),
@@ -662,7 +662,7 @@ late ColorNotifier notifier;
                         Text(
                           bestsellingitemprice[index],
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 55,
                             fontFamily: 'GilroyBold',
                           ),

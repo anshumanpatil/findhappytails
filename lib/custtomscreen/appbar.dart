@@ -12,8 +12,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    late ColorNotifier notifier;
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //late ColorNotifier notifier;
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Container(
       height: preferredSize.height,
       alignment: Alignment.center,
@@ -29,7 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 },
                 child: Icon(
                   Icons.arrow_back,
-                  color: notifier.getbuttoncolor,
+                  color: const Color(0xffFC9340),
                 ),
               ),
             ],
@@ -41,7 +41,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               Text(
                 title!,
                 style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontSize: height / 23,
                     fontFamily: 'GilroyBold'),
               ),

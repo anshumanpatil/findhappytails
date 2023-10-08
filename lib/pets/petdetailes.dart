@@ -14,28 +14,28 @@ class PetDetails extends StatefulWidget {
 
 class _PetDetailsState extends State<PetDetails> {
 
-  late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    // //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
 
     );
   }
@@ -64,7 +64,7 @@ class _PetDetailsState extends State<PetDetails> {
               Text(
                 title,
                 style:
-                    TextStyle(fontFamily: 'GilroyBold', fontSize: height / 40,color: notifier.getblack),
+                    TextStyle(fontFamily: 'GilroyBold', fontSize: height / 40,color: Colors.black),
               ),
               SizedBox(height: height / 300),
               Text(
@@ -72,7 +72,7 @@ class _PetDetailsState extends State<PetDetails> {
                 style: TextStyle(
                   fontFamily: 'GilroyMedium',
                   fontSize: height / 60,
-                  color: notifier.getgreay,
+                  color: Colors.grey,
                 ),
               ),
             ],
@@ -98,7 +98,7 @@ class _PetDetailsState extends State<PetDetails> {
           Text(
             age,
             style: TextStyle(
-              color: notifier.getgreay,
+              color: Colors.grey,
               fontSize: height / 70,
               fontFamily: 'GilroyMedium',
             ),
@@ -106,7 +106,7 @@ class _PetDetailsState extends State<PetDetails> {
           Text(
             yr,
             style: TextStyle(
-              color: notifier.getblack,
+              color: Colors.black,
               fontSize: height / 60,
               fontFamily: 'GilroyBold',
             ),
@@ -132,7 +132,7 @@ class _PetDetailsState extends State<PetDetails> {
           Text(
             age,
             style: TextStyle(
-              color: notifier.getgreay,
+              color: Colors.grey,
               fontSize: height / 70,
               fontFamily: 'GilroyMedium',
             ),
@@ -140,7 +140,7 @@ class _PetDetailsState extends State<PetDetails> {
           Text(
             yr,
             style: TextStyle(
-              color: notifier.getblack,
+              color: Colors.black,
               fontSize: height / 60,
               fontFamily: 'GilroyBold',
             ),
@@ -166,7 +166,7 @@ class _PetDetailsState extends State<PetDetails> {
           Text(
             age,
             style: TextStyle(
-              color: notifier.getgreay,
+              color: Colors.grey,
               fontSize: height / 70,
               fontFamily: 'GilroyMedium',
             ),
@@ -174,7 +174,7 @@ class _PetDetailsState extends State<PetDetails> {
           Text(
             yr,
             style: TextStyle(
-              color: notifier.getblack,
+              color: Colors.black,
               fontSize: height / 60,
               fontFamily: 'GilroyBold',
             ),

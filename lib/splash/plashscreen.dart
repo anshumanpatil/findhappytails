@@ -37,14 +37,14 @@ class _SplashScreenState extends State<SplashScreen> {
           }
     );
   }
-late ColorNotifier notifier;
+//late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           children: [
@@ -54,7 +54,7 @@ late ColorNotifier notifier;
             Text(
               LanguageEn.yourpetispartofourfamily,
               style: TextStyle(
-                color: notifier.getblack,
+                color: Colors.black,
                 fontSize: height / 50,
                 fontFamily: 'GilroyBold',
               ),

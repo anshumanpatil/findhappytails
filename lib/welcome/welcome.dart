@@ -14,7 +14,7 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
   // late bool isUserLoggedIn;
   // checkLoginStatus() async {
   //   final prefs = await SharedPreferences.getInstance();
@@ -47,11 +47,11 @@ class _WelcomeState extends State<Welcome> {
 
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -68,9 +68,9 @@ class _WelcomeState extends State<Welcome> {
               child: button(
                 LanguageEn.continueswithgoogle,
                 width / 1.1,
-                notifier.getbuttoncolor,
+                const Color(0xffFC9340),
                 const Color(0xfffbf0e8),
-                notifier.getbuttoncolor,
+                const Color(0xffFC9340),
                 "assets/googlelogo.png",
                 buttoncolor,
               ),
@@ -83,11 +83,11 @@ class _WelcomeState extends State<Welcome> {
               child: button(
                 LanguageEn.continueswithfacebook,
                 width / 1.1,
-                notifier.getbuttoncolor,
+                const Color(0xffFC9340),
                 const Color(0xfffbf0e8),
-                notifier.getbuttoncolor,
+                const Color(0xffFC9340),
                 "assets/facebooklogo.png",
-                notifier.getbuttoncolor,
+                const Color(0xffFC9340),
               ),
             ),
             SizedBox(height: height / 45),
@@ -98,11 +98,11 @@ class _WelcomeState extends State<Welcome> {
               child: button(
                 LanguageEn.registerwithemail,
                 width / 1.1,
-                notifier.getbuttoncolor,
+                const Color(0xffFC9340),
                 Colors.transparent,
-                notifier.getbuttoncolor,
+                const Color(0xffFC9340),
                 "assets/email.png",
-                notifier.getbuttoncolor,
+                const Color(0xffFC9340),
               ),
             ),
             SizedBox(height: height / 5),
@@ -112,7 +112,7 @@ class _WelcomeState extends State<Welcome> {
                 Text(
                   LanguageEn.alredyhaveanacount,
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontSize: height / 55,
                     fontFamily: 'GilroyMedium',
                   ),
@@ -124,7 +124,7 @@ class _WelcomeState extends State<Welcome> {
                   child: Text(
                     LanguageEn.signin,
                     style: TextStyle(
-                      color: notifier.getbuttoncolor,
+                      color: const Color(0xffFC9340),
                       fontSize: height / 55,
                       fontFamily: 'GilroyBold',
                     ),

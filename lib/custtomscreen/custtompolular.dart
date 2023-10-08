@@ -39,10 +39,10 @@ class _CusttomPopularState extends State<CusttomPopular> {
     "assets/pet2.png",
     "assets/pet1.png",
   ];
-late ColorNotifier notifier;
+//late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Column(
       children: [
         Container(
@@ -61,7 +61,7 @@ late ColorNotifier notifier;
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
-                      child: Card(color: notifier.getcardcolor,
+                      child: Card(color: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         ),
@@ -107,7 +107,7 @@ late ColorNotifier notifier;
                                         style: TextStyle(
                                             fontSize: height / 50,
                                             fontFamily: 'GilroyBold',
-                                            color:notifier.getblack),
+                                            color:Colors.black),
                                       ),
                                       SizedBox(height: height / 100),
                                       Row(

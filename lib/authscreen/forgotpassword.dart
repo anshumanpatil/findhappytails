@@ -16,28 +16,28 @@ class Forgotpassword extends StatefulWidget {
 }
 
 class _ForgotpasswordState extends State<Forgotpassword> {
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar( LanguageEn.forgotpasswords),
       body: SingleChildScrollView(
         child: Column(
@@ -48,7 +48,7 @@ class _ForgotpasswordState extends State<Forgotpassword> {
                 Text(
                   LanguageEn.enteryouremailtoreset,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 50,
                   ),
@@ -62,7 +62,7 @@ class _ForgotpasswordState extends State<Forgotpassword> {
                 Text(
                   LanguageEn.email,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 50,
                   ),
@@ -75,7 +75,7 @@ class _ForgotpasswordState extends State<Forgotpassword> {
             Text(
               LanguageEn.enteryourregisteredemail,
               style: TextStyle(
-                color: notifier.getgreay,
+                color: Colors.grey,
                 fontFamily: 'GilroyMedium',
                 fontSize: height / 55,
               ),
@@ -89,8 +89,8 @@ class _ForgotpasswordState extends State<Forgotpassword> {
                 LanguageEn.submit,
                 width / 1.1,
                 Colors.transparent,
-                notifier.getbuttoncolor,
-                notifier.getwihite,
+                const Color(0xffFC9340),
+                Colors.white,
               ),
             ),
           ],

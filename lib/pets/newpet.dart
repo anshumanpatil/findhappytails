@@ -30,21 +30,21 @@ class _NewPetState extends State<NewPet> {
     'Labrador',
   ];
 
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
 
   DateTime currentDate = DateTime.now();
@@ -63,13 +63,13 @@ class _NewPetState extends State<NewPet> {
     }
   }
 
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
 
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -84,7 +84,7 @@ class _NewPetState extends State<NewPet> {
                   child: Icon(
                     Icons.arrow_back,
                     size: height / 30,
-                    color: notifier.getbuttoncolor,
+                    color: const Color(0xffFC9340),
                   ),
                 )
               ],
@@ -96,7 +96,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.newpet,
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontFamily: 'GilroyBold',
                     fontSize: height / 25,
                   ),
@@ -109,7 +109,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.addyournewfurry,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 45,
                   ),
@@ -125,7 +125,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.petname,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
@@ -141,7 +141,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.typeofpet,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
@@ -154,7 +154,7 @@ class _NewPetState extends State<NewPet> {
               height: height / 12,
               width: width / 1.1,
               child: DropdownButtonFormField(
-                dropdownColor: notifier.getcardcolor,
+                dropdownColor: Colors.white,
                 decoration: InputDecoration(
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                   contentPadding:
@@ -199,7 +199,7 @@ class _NewPetState extends State<NewPet> {
                     child: Text(
                       items,
                       style: TextStyle(
-                          color: notifier.getblack, fontFamily: 'GilroyMedium'),
+                          color: Colors.black, fontFamily: 'GilroyMedium'),
                     ),
                   );
                 }).toList(),
@@ -219,7 +219,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.breed,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
@@ -235,7 +235,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.birthdate,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
@@ -307,7 +307,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.gender,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
@@ -330,7 +330,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.weight,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
@@ -346,7 +346,7 @@ class _NewPetState extends State<NewPet> {
                 Text(
                   LanguageEn.weight,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
@@ -364,8 +364,8 @@ class _NewPetState extends State<NewPet> {
                 LanguageEn.save,
                 width / 1.1,
                 Colors.transparent,
-                notifier.getbuttoncolor,
-                notifier.getwihite,
+                const Color(0xffFC9340),
+                Colors.white,
               ),
             ),
             SizedBox(height: height / 20),
@@ -381,7 +381,7 @@ class _NewPetState extends State<NewPet> {
       height: height / 5,
       width: width / 1.1,
       child: TextField(
-        style: TextStyle(color: notifier.getblack),
+        style: TextStyle(color: Colors.black),
         maxLines: 10,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.only(left: 20, top: 30),
@@ -434,7 +434,7 @@ class _NewPetState extends State<NewPet> {
             Text(
               gender,
               style: TextStyle(
-                  color: notifier.getblack,
+                  color: Colors.black,
                   fontSize: height / 50,
                   fontFamily: 'GilroyMedium'),
             ),
@@ -482,7 +482,7 @@ class _NewPetState extends State<NewPet> {
                         child: Container(
                           height: height / 4.3,
                           width: width / 1.1,
-                          color: notifier.getnewpetcolor,
+                          color: const Color(0xfff5f5f5),
                           child: Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,

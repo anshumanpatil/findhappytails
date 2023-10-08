@@ -85,30 +85,30 @@ class _ShopingState extends State<Shoping> {
     "Basche",
     "Domino"
   ];
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   RangeValues _currentRangeValues = const RangeValues(20, 25);
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
 
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           // Add your onPressed code here!
@@ -120,7 +120,7 @@ class _ShopingState extends State<Shoping> {
                 _shortbottomsheet();
               },
               child: Icon(Icons.filter_list,
-                  size: height / 30, color: notifier.getwihite),
+                  size: height / 30, color: Colors.white),
             ),
             SizedBox(width: width / 50),
             GestureDetector(
@@ -132,7 +132,7 @@ class _ShopingState extends State<Shoping> {
                 style: TextStyle(
                   fontSize: height / 50,
                   fontFamily: 'GilroyBold',
-                  color: notifier.getwihite,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -140,14 +140,14 @@ class _ShopingState extends State<Shoping> {
             Container(
               height: height / 20,
               width: width / 250,
-              color: notifier.getwihite.withOpacity(0.3),
+              color: Colors.white.withOpacity(0.3),
             ),
             SizedBox(width: width / 20),
             GestureDetector(
                 onTap: () {
                   _filterbottomsheet();
                 },
-                child: Icon(Icons.filter_alt, size: height / 30,color: notifier.getwihite,)),
+                child: Icon(Icons.filter_alt, size: height / 30,color: Colors.white,)),
             SizedBox(width: width / 50),
             GestureDetector(
               onTap: () {
@@ -156,7 +156,7 @@ class _ShopingState extends State<Shoping> {
               child: Text(
                 LanguageEn.filter,
                 style:
-                    TextStyle(color: notifier.getwihite,fontSize: height / 50, fontFamily: 'GilroyBold'),
+                    TextStyle(color: Colors.white,fontSize: height / 50, fontFamily: 'GilroyBold'),
               ),
             )
           ],
@@ -176,7 +176,7 @@ class _ShopingState extends State<Shoping> {
                   Navigator.pop(context);
                 },
                 child: Icon(Icons.arrow_back,
-                    color:  notifier.getbuttoncolor, size: height / 30),
+                    color:  const Color(0xffFC9340), size: height / 30),
               ),
               // const Spacer(),
               // Icon(Icons.shopping_basket,
@@ -191,7 +191,7 @@ class _ShopingState extends State<Shoping> {
               Text(
                 LanguageEn.shopping,
                 style: TextStyle(
-                  color: notifier.getblack,
+                  color: Colors.black,
                   fontSize: height / 30,
                   fontFamily: 'GilroyBold',
                 ),
@@ -205,7 +205,7 @@ class _ShopingState extends State<Shoping> {
               Text(
                 LanguageEn.findandbuy,
                 style: TextStyle(
-                  color: notifier.getgreay,
+                  color: Colors.grey,
                   fontSize: height / 50,
                   fontFamily: 'GilroyMedium',
                 ),
@@ -221,12 +221,12 @@ class _ShopingState extends State<Shoping> {
                 color: Colors.transparent,
                 height: height / 15,
                 child: TextField(
-                  style: TextStyle(color: notifier.getblack),
+                  style: TextStyle(color: Colors.black),
                   autocorrect: true,
                   decoration: InputDecoration(
                     hintText: LanguageEn.searchproduct,
                     suffixIcon: const Icon(Icons.search_rounded),
-                    hintStyle:   TextStyle(color: notifier.getgreay),
+                    hintStyle:   TextStyle(color: Colors.grey),
                     enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(12.0)),
                       borderSide: BorderSide(
@@ -268,8 +268,8 @@ class _ShopingState extends State<Shoping> {
                             width: width / 3.65,
                             decoration: BoxDecoration(
                               color: selectedindex == index
-                                  ?  notifier.getbuttoncolor
-                                  :  notifier.getbuttoncolor.withOpacity(0.10),
+                                  ?  const Color(0xffFC9340)
+                                  :  const Color(0xffFC9340).withOpacity(0.10),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(10),
                               ),
@@ -279,8 +279,8 @@ class _ShopingState extends State<Shoping> {
                                 txt[index].toString(),
                                 style: TextStyle(
                                     color: selectedindex == index
-                                        ? notifier.getwihite
-                                        :  notifier.getbuttoncolor,
+                                        ? Colors.white
+                                        :  const Color(0xffFC9340),
                                     fontSize: height / 53,
                                     fontFamily: 'GilroyBold'),
                               ),
@@ -360,7 +360,7 @@ class _ShopingState extends State<Shoping> {
                                             Text(
                                               allbestsellingitemtitle[index],
                                               style: TextStyle(
-                                                color: notifier.getblack,
+                                                color: Colors.black,
                                                 fontSize: height / 55,
                                                 fontFamily: 'GilroyBold',
                                               ),
@@ -459,7 +459,7 @@ class _ShopingState extends State<Shoping> {
                                                   foodbestsellingitemtitle[
                                                       index],
                                                   style: TextStyle(
-                                                    color: notifier.getblack,
+                                                    color: Colors.black,
                                                     fontSize: height / 55,
                                                     fontFamily: 'GilroyBold',
                                                   ),
@@ -558,7 +558,7 @@ class _ShopingState extends State<Shoping> {
                                                 shampoobestsellingitemtitle[
                                                     index],
                                                 style: TextStyle(
-                                                  color: notifier.getblack,
+                                                  color: Colors.black,
                                                   fontSize: height / 55,
                                                   fontFamily: 'GilroyBold',
                                                 ),
@@ -618,7 +618,7 @@ class _ShopingState extends State<Shoping> {
                         ),
                         Text(
                           LanguageEn.sort,
-                          style: TextStyle(color: notifier.getblack,
+                          style: TextStyle(color: Colors.black,
                             fontSize: height / 25,
                             fontFamily: 'GilroyBold',
                           ),
@@ -634,7 +634,7 @@ class _ShopingState extends State<Shoping> {
                         Text(
                           LanguageEn.arrangebasedonthe,
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 48,
                             fontFamily: 'GilroyMedium',
                           ),
@@ -664,7 +664,7 @@ class _ShopingState extends State<Shoping> {
                                     color: buttoncolor,
                                   ),
                                 ),
-                                checkColor: notifier.getwihite,
+                                checkColor: Colors.white,
                                 activeColor: buttoncolor,
                                 controlAffinity:
                                 ListTileControlAffinity.trailing,
@@ -677,7 +677,7 @@ class _ShopingState extends State<Shoping> {
                                       Text(
                                         checkList2Items[index]["title"],
                                         style: TextStyle(
-                                            color: notifier.getblack,
+                                            color: Colors.black,
                                             fontSize: height / 60,
                                             fontFamily: 'GilroyMedium'),
                                       ),
@@ -708,15 +708,15 @@ class _ShopingState extends State<Shoping> {
                       children: [
                         SizedBox(width: width / 20),
                         filterbottomsheetbutton(width / 3, Colors.transparent,
-                            notifier.getbuttoncolor, LanguageEn.reset,  notifier.getbuttoncolor),
+                            const Color(0xffFC9340), LanguageEn.reset,  const Color(0xffFC9340)),
                         SizedBox(width: width / 20),
                         GestureDetector(
                           onTap: () {
                             Navigator.pop(context);
                             // Navigator.pushNamed(context, '/Adopt');
                           },
-                          child: filterbottomsheetbutton(width / 2,  notifier.getbuttoncolor,
-                              Colors.transparent, LanguageEn.apply, notifier.getwihite),
+                          child: filterbottomsheetbutton(width / 2,  const Color(0xffFC9340),
+                              Colors.transparent, LanguageEn.apply, Colors.white),
                         ),
                       ],
                     ),
@@ -754,7 +754,7 @@ class _ShopingState extends State<Shoping> {
                         ),
                         Text(
                           LanguageEn.filter,
-                          style: TextStyle(color: notifier.getblack,
+                          style: TextStyle(color: Colors.black,
                             fontSize: height / 25,
                             fontFamily: 'GilroyBold',
                           ),
@@ -770,7 +770,7 @@ class _ShopingState extends State<Shoping> {
                         Text(
                           LanguageEn.filterproductwithmore,
                           style: TextStyle(
-                            color: notifier.getgreay
+                            color: Colors.grey
                             ,
                             fontSize: height / 48,
                             fontFamily: 'GilroyMedium',
@@ -787,7 +787,7 @@ class _ShopingState extends State<Shoping> {
                           style: TextStyle(
                               fontFamily: 'GilroyMedium',
                               fontSize: height / 50,
-                              color: notifier.getgreay),
+                              color: Colors.grey),
                         )
                       ],
                     ),
@@ -819,7 +819,7 @@ class _ShopingState extends State<Shoping> {
                         Text(
                           "\$50.00",
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 50,
                             fontFamily: 'GilroyMedium',
                           ),
@@ -828,7 +828,7 @@ class _ShopingState extends State<Shoping> {
                         Text(
                           "\$50.00",
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 50,
                             fontFamily: 'GilroyMedium',
                           ),
@@ -845,7 +845,7 @@ class _ShopingState extends State<Shoping> {
                           style: TextStyle(
                               fontFamily: 'GilroyMedium',
                               fontSize: height / 50,
-                              color: notifier.getgreay),
+                              color: Colors.grey),
                         )
                       ],
                     ),
@@ -892,7 +892,7 @@ class _ShopingState extends State<Shoping> {
                                         brand[index],
                                         style: TextStyle(
                                             fontFamily: 'GilroyMedium',
-                                            color: notifier.getblack,
+                                            color: Colors.black,
                                             fontWeight: FontWeight.normal,
                                             fontSize: height / 55),
                                       ),
@@ -910,15 +910,15 @@ class _ShopingState extends State<Shoping> {
                       children: [
                         SizedBox(width: width / 20),
                         filterbottomsheetbutton(width / 3, Colors.transparent,
-                          notifier.getbuttoncolor, LanguageEn.reset,  notifier.getbuttoncolor,),
+                          const Color(0xffFC9340), LanguageEn.reset,  const Color(0xffFC9340),),
                         SizedBox(width: width / 20),
                         GestureDetector(
                           onTap: () {
                             Navigator.pop(context);
                             // Navigator.pushNamed(context, '/Adopt');
                           },
-                          child: filterbottomsheetbutton(width / 2,  notifier.getbuttoncolor,
-                              Colors.transparent, LanguageEn.apply, notifier.getwihite),
+                          child: filterbottomsheetbutton(width / 2,  const Color(0xffFC9340),
+                              Colors.transparent, LanguageEn.apply, Colors.white),
                         ),
                       ],
                     ),

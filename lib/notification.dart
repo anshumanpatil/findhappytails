@@ -13,28 +13,28 @@ class Notif extends StatefulWidget {
 }
 
 class _NotifState extends State<Notif> {
-  late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,13 +47,13 @@ class _NotifState extends State<Notif> {
                     Navigator.pop(context);
                   },
                   child: Icon(Icons.arrow_back,
-                      size: height / 30, color: notifier.getbuttoncolor),
+                      size: height / 30, color: const Color(0xffFC9340)),
                 ),
                 const Spacer(),
                 Text(
                   "Notification",
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontSize: height / 40,
                     fontFamily: 'GilroyBold',
                   ),
@@ -91,7 +91,7 @@ class _NotifState extends State<Notif> {
     return Center(
       child: Card(
         elevation: 1.5,
-        color: notifier.getcardcolor,
+        color: Colors.white,
         child: Container(
           color: Colors.transparent,
           height: height / 10,
@@ -110,7 +110,7 @@ class _NotifState extends State<Notif> {
                       txt,
                       style: TextStyle(
                           fontSize: height / 60,
-                          color: notifier.getblack,
+                          color: Colors.black,
                           fontFamily: 'GilroyMedium'),
                     ),
                   ),

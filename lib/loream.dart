@@ -14,28 +14,28 @@ class Loream extends StatefulWidget {
 }
 
 class _LoreamState extends State<Loream> {
-  late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           SizedBox(height: height / 14),
@@ -47,13 +47,13 @@ class _LoreamState extends State<Loream> {
                   Navigator.pop(context);
                 },
                 child: Icon(Icons.arrow_back,
-                    size: height / 30, color: notifier.getbuttoncolor),
+                    size: height / 30, color: const Color(0xffFC9340)),
               ),
               const Spacer(),
               Text(
                 widget.titles!,
                 style: TextStyle(
-                  color: notifier.getblack,
+                  color: Colors.black,
                   fontSize: height / 40,
                   fontFamily: 'GilroyBold',
                 ),
@@ -70,7 +70,7 @@ class _LoreamState extends State<Loream> {
               style: TextStyle(
                 fontFamily: 'GilroyMedium',
                 fontSize: height / 50,
-                color: notifier.getblack,
+                color: Colors.black,
               ),
             ),
           )

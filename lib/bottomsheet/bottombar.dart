@@ -32,26 +32,26 @@ class _BottomhomeState extends State<Bottomhome> {
   //     print(_selectedIndex);
   //   });
   // }
-late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+//late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     final _pageOption = [
@@ -60,7 +60,7 @@ late ColorNotifier notifier;
       const Pets(),
       const User()
     ];
-    return Scaffold(backgroundColor: notifier.getwihite,
+    return Scaffold(backgroundColor: Colors.white,
       restorationId: "123",
       bottomNavigationBar: SalomonBottomBar(
         selectedColorOpacity: 1,

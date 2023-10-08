@@ -28,28 +28,28 @@ class _AddNewAddressState extends State<AddNewAddress> {
   Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
   LatLng? lastLatLng;
   final Completer<GoogleMapController> _controller = Completer();
-  late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           SizedBox(height: height / 17),
@@ -63,7 +63,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                 child: Icon(
                   Icons.arrow_back,
                   size: height / 30,
-                  color: notifier.getbuttoncolor,
+                  color: const Color(0xffFC9340),
                 ),
               ),
             ],
@@ -75,7 +75,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
               Text(
                 LanguageEn.newadress,
                 style: TextStyle(
-                  color: notifier.getblack,
+                  color: Colors.black,
                   fontSize: height / 30,
                   fontFamily: 'GilroyBold',
                 ),
@@ -89,7 +89,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
               Text(
                 LanguageEn.completeformbelow,
                 style: TextStyle(
-                  color: notifier.getgreay,
+                  color: Colors.grey,
                   fontSize: height / 50,
                   fontFamily: 'GilroyMedium',
                 ),
@@ -129,7 +129,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                 Text(
                   LanguageEn.addressdetails,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
@@ -145,8 +145,8 @@ class _AddNewAddressState extends State<AddNewAddress> {
               LanguageEn.save,
               width / 1.1,
               Colors.transparent,
-              notifier.getbuttoncolor,
-              notifier.getwihite,
+              const Color(0xffFC9340),
+              Colors.white,
             ),
             SizedBox(height: height / 20),
           ],);
@@ -190,7 +190,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
             ),
             const Spacer(),
             Radio(
-              activeColor:  notifier.getbuttoncolor,
+              activeColor:  const Color(0xffFC9340),
               value: 0,
               groupValue: _groupValue,
               onChanged: (value) {

@@ -11,14 +11,14 @@ class CustoomTextfild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late ColorNotifier notifier;
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //late ColorNotifier notifier;
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Container(
       color: Colors.transparent,
       height: height / 13,
       width: width / 1.1,
       child: TextField(
-        style: TextStyle(color: notifier.getblack),
+        style: TextStyle(color: Colors.black),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.only(left: 10),
           hintText: hintText,

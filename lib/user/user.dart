@@ -19,28 +19,28 @@ class User extends StatefulWidget {
 class _UserState extends State<User> {
 
 
-  late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -62,7 +62,7 @@ class _UserState extends State<User> {
                       SizedBox(width: width / 2.5),
                       Text(
                         LanguageEn.profile,
-                        style: TextStyle(color: notifier.getblack,
+                        style: TextStyle(color: Colors.black,
                           fontFamily: 'GilroyBold',
                           fontSize: height / 35,
                         ),
@@ -90,7 +90,7 @@ class _UserState extends State<User> {
                   Text(
                     LanguageEn.leilasans,
                     style: TextStyle(
-                      color: notifier.getblack,
+                      color: Colors.black,
                       fontSize: height / 30,
                       fontFamily: 'GilroyBold',
                     ),
@@ -99,7 +99,7 @@ class _UserState extends State<User> {
                   Text(
                     LanguageEn.kiev,
                     style: TextStyle(
-                      color: notifier.getbuttoncolor,
+                      color: const Color(0xffFC9340),
                       fontSize: height / 50,
                       fontFamily: 'GilroyMedium',
                     ),
@@ -198,15 +198,15 @@ class _UserState extends State<User> {
         children: [
           SizedBox(width: width / 20),
           CircleAvatar(
-            backgroundColor: notifier.getbuttoncolor.withOpacity(0.10),
+            backgroundColor: const Color(0xffFC9340).withOpacity(0.10),
             child: Image.asset(image,
-                height: height / 40, color: notifier.getbuttoncolor),
+                height: height / 40, color: const Color(0xffFC9340)),
           ),
           SizedBox(width: width / 50),
           Text(
             name,
             style: TextStyle(
-              color: notifier.getblack,
+              color: Colors.black,
               fontSize: height / 50,
               fontFamily: 'GilroyMedium',
             ),

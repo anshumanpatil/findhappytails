@@ -13,28 +13,28 @@ class OrderDetails extends StatefulWidget {
 }
 
 class _OrderDetailsState extends State<OrderDetails> {
-  late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
 
     );
   }
@@ -46,13 +46,13 @@ class _OrderDetailsState extends State<OrderDetails> {
         Text(
           title,
           style: TextStyle(
-              fontSize: height / 45, color: notifier.getgreay, fontFamily: 'GilroyMedium'),
+              fontSize: height / 45, color: Colors.grey, fontFamily: 'GilroyMedium'),
         ),
         const Spacer(),
         Text(
           price,
           style: TextStyle(
-              fontSize: height / 45, color: notifier.getgreay, fontFamily: 'GilroyMedium'),
+              fontSize: height / 45, color: Colors.grey, fontFamily: 'GilroyMedium'),
         ),
         SizedBox(width: width / 20),
       ],
@@ -83,7 +83,7 @@ class _OrderDetailsState extends State<OrderDetails> {
               Text(
                 name,
                 style: TextStyle(
-                  color: notifier.getblack,
+                  color: Colors.black,
                   fontSize: height / 48,
                   fontFamily: 'GilroyBold',
                 ),
@@ -92,7 +92,7 @@ class _OrderDetailsState extends State<OrderDetails> {
               Text(
                 subname,
                 style: TextStyle(
-                  color: notifier.getgreay,
+                  color: Colors.grey,
                   fontSize: height / 55,
                   fontFamily: 'GilroyMedium',
                 ),
@@ -126,7 +126,7 @@ class _OrderDetailsState extends State<OrderDetails> {
               Text(
                 name,
                 style: TextStyle(
-                  color: notifier.getgreay,
+                  color: Colors.grey,
                   fontSize: height / 55,
                   fontFamily: 'GilroyMedium',
                 ),
@@ -135,7 +135,7 @@ class _OrderDetailsState extends State<OrderDetails> {
               Text(
                 subname,
                 style: TextStyle(
-                  color: notifier.getgreay,
+                  color: Colors.grey,
                   fontSize: height / 55,
                   fontFamily: 'GilroyMedium',
                 ),

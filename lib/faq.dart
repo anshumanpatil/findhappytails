@@ -16,34 +16,34 @@ class FAQ extends StatefulWidget {
 }
 
 class _FAQState extends State<FAQ> {
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   final _loremIpsum =
       "Uh Oh. Did your pet eat a little too much over the holidays? Maybe all of that sumptuous feasting left him a bit on the chubby side! Though pets are very adorable when pudgy;";
   final _contentStyle = const TextStyle(
       color: Color(0xff999999), fontSize: 14, fontWeight: FontWeight.normal);
-late ColorNotifier notifier;
+//late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -62,7 +62,7 @@ late ColorNotifier notifier;
                 Text(
                   "FAQ",
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontSize: height / 40,
                     fontFamily: 'GilroyBold',
                   ),
@@ -113,7 +113,7 @@ late ColorNotifier notifier;
                 Text(
                   "Top Questions",
                   style: TextStyle(
-                      color: notifier.getblack,
+                      color: Colors.black,
                       fontSize: height / 50,
                       fontFamily: 'GilroyBold'),
                 ),

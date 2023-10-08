@@ -20,27 +20,27 @@ class _SettingsState extends State<Settings> {
   @override
   void initState() {
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
-late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+//late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -53,12 +53,12 @@ late ColorNotifier notifier;
                     Navigator.pop(context);
                   },
                   child: Icon(Icons.arrow_back,
-                      size: height / 30, color:  notifier.getbuttoncolor),
+                      size: height / 30, color:  const Color(0xffFC9340)),
                 ),
                 SizedBox(width: width / 3.1),
                 Text(
                   LanguageEn.setting,
-                  style: TextStyle(color: notifier.getblack,
+                  style: TextStyle(color: Colors.black,
                     fontSize: height / 40,
                     fontFamily: 'GilroyBold',
                   ),
@@ -103,10 +103,10 @@ late ColorNotifier notifier;
           Text(
             name,
             style:   TextStyle(
-                fontFamily: 'Gilroy_Medium', fontSize: 17, color: notifier.getblack),
+                fontFamily: 'Gilroy_Medium', fontSize: 17, color: Colors.black),
           ),
           const Spacer(),
-            Icon(Icons.arrow_forward_ios, color: notifier.getgreay, size: 17),
+            Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 17),
           SizedBox(width: width / 20),
         ],
       ),
@@ -127,19 +127,19 @@ late ColorNotifier notifier;
                 style: TextStyle(
                     fontFamily: 'Gilroy_Medium',
                     fontSize: 17,
-                    color: notifier.getblack),
+                    color: Colors.black),
               ),
               Text(
                 "Choose what data you share with us",
                 style: TextStyle(
                     fontFamily: 'Gilroy_Medium',
                     fontSize: 13,
-                    color: notifier.getgreay),
+                    color: Colors.grey),
               ),
             ],
           ),
           const Spacer(),
-            Icon(Icons.arrow_forward_ios, color: notifier.getgreay, size: 17),
+            Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 17),
           SizedBox(width: width / 20),
         ],
       ),

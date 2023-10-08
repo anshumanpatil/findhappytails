@@ -78,14 +78,14 @@ class _OnbondingState extends State<Onbonding> {
     );
   }
 
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Stack(
@@ -98,7 +98,7 @@ class _OnbondingState extends State<Onbonding> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Container(
-                    color: notifier.getwihite,
+                    color: Colors.white,
                     height: height,
                     child: PageView(
                       physics: const ClampingScrollPhysics(),
@@ -125,7 +125,7 @@ class _OnbondingState extends State<Onbonding> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyBold',
-                                          color: notifier.getblack,
+                                          color: Colors.black,
                                           fontSize: height / 32),
                                     ),
                                     SizedBox(height: height / 35),
@@ -134,7 +134,7 @@ class _OnbondingState extends State<Onbonding> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyMedium',
-                                          color: notifier.getgreay,
+                                          color: Colors.grey,
                                           fontSize: height / 55),
                                     ),
                                     SizedBox(height: height / 40),
@@ -160,7 +160,7 @@ class _OnbondingState extends State<Onbonding> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyBold',
-                                          color: notifier.getblack,
+                                          color: Colors.black,
                                           fontSize: height / 32),
                                     ),
                                     SizedBox(height: height / 35),
@@ -169,7 +169,7 @@ class _OnbondingState extends State<Onbonding> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyMedium',
-                                          color: notifier.getgreay,
+                                          color: Colors.grey,
                                           fontSize: height / 55),
                                     ),
                                     SizedBox(height: height / 40),
@@ -195,7 +195,7 @@ class _OnbondingState extends State<Onbonding> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyBold',
-                                          color: notifier.getblack,
+                                          color: Colors.black,
                                           fontSize: height / 32),
                                     ),
                                     SizedBox(height: height / 35),
@@ -205,7 +205,7 @@ class _OnbondingState extends State<Onbonding> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'GilroyMedium',
-                                          color: notifier.getgreay,
+                                          color: Colors.grey,
                                           fontSize: height / 55),
                                     ),
                                     SizedBox(height: height / 40),
@@ -250,9 +250,9 @@ class _OnbondingState extends State<Onbonding> {
                                 child: Custombutton.button(
                                   LanguageEn.next,
                                   width / 1.1,
-                                  notifier.getbuttoncolor,
+                                  const Color(0xffFC9340),
                                   Colors.transparent,
-                                  notifier.getbuttoncolor,
+                                  const Color(0xffFC9340),
                                 ),
                               ),
                             ),
@@ -296,8 +296,8 @@ class _OnbondingState extends State<Onbonding> {
                                   LanguageEn.continues,
                                   width / 1.1,
                                   Colors.transparent,
-                                  notifier.getbuttoncolor,
-                                  notifier.getwihite,
+                                  const Color(0xffFC9340),
+                                  Colors.white,
                                 ),
                               ),
                             ),

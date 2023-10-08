@@ -39,12 +39,12 @@ class _SignInState extends State<SignIn> {
     // getdarkmodepreviousstate();
   }
 
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar(LanguageEn.signin),
       body: SingleChildScrollView(
         child: Column(
@@ -55,7 +55,7 @@ class _SignInState extends State<SignIn> {
                 Text(
                   LanguageEn.loginwithyouraccount,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 50,
                   ),
@@ -69,7 +69,7 @@ class _SignInState extends State<SignIn> {
                 Text(
                   LanguageEn.email,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 50,
                   ),
@@ -83,7 +83,7 @@ class _SignInState extends State<SignIn> {
               width: width / 1.1,
               child: TextField(
                 controller: loginController.loginEmailController,
-                style: TextStyle(color: notifier.getblack),
+                style: TextStyle(color: Colors.black),
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.only(left: 10),
                   hintText: "Email ID",
@@ -113,7 +113,7 @@ class _SignInState extends State<SignIn> {
                 Text(
                   LanguageEn.password,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 50,
                   ),
@@ -127,7 +127,7 @@ class _SignInState extends State<SignIn> {
               width: width / 1.1,
               child: TextField(
                 controller: loginController.loginPasswordController,
-                style: TextStyle(color: notifier.getblack),
+                style: TextStyle(color: Colors.black),
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.only(left: 10),
                   hintText: "Password",
@@ -161,7 +161,7 @@ class _SignInState extends State<SignIn> {
                   child: Text(
                     LanguageEn.forgotpassword,
                     style: TextStyle(
-                      color: notifier.getbuttoncolor,
+                      color: const Color(0xffFC9340),
                       fontFamily: 'GilroyBold',
                       fontSize: height / 50,
                     ),
@@ -182,8 +182,8 @@ class _SignInState extends State<SignIn> {
                 LanguageEn.login,
                 width / 1.1,
                 Colors.transparent,
-                notifier.getbuttoncolor,
-                notifier.getwihite,
+                const Color(0xffFC9340),
+                Colors.white,
               ),
             ),
             SizedBox(height: height / 50),
@@ -193,7 +193,7 @@ class _SignInState extends State<SignIn> {
                 Text(
                   LanguageEn.donthaveanaccountyet,
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontSize: height / 55,
                     fontFamily: 'GilroyMedium',
                   ),
@@ -205,7 +205,7 @@ class _SignInState extends State<SignIn> {
                   child: Text(
                     LanguageEn.register,
                     style: TextStyle(
-                      color: notifier.getbuttoncolor,
+                      color: const Color(0xffFC9340),
                       fontSize: height / 55,
                       fontFamily: 'GilroyBold',
                     ),

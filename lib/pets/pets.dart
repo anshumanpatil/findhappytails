@@ -15,28 +15,28 @@ class Pets extends StatefulWidget {
 }
 
 class _PetsState extends State<Pets> {
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           SizedBox(height: height / 17),
@@ -46,7 +46,7 @@ class _PetsState extends State<Pets> {
               Text(
                 LanguageEn.pets,
                 style: TextStyle(
-                  color: notifier.getblack,
+                  color: Colors.black,
                   fontFamily: 'GilroyBold',
                   fontSize: height / 25,
                 ),
@@ -60,7 +60,7 @@ class _PetsState extends State<Pets> {
               Text(
                 LanguageEn.listbioof,
                 style: TextStyle(
-                  color: notifier.getgreay,
+                  color: Colors.grey,
                   fontFamily: 'GilroyMedium',
                   fontSize: height / 45,
                 ),
@@ -85,7 +85,7 @@ class _PetsState extends State<Pets> {
               height: height / 11,
               width: width / 1.1,
               decoration:   BoxDecoration(
-                color:     notifier.getbuttoncolor.withOpacity(0.10),
+                color:     const Color(0xffFC9340).withOpacity(0.10),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(14),
                 ),
@@ -94,12 +94,12 @@ class _PetsState extends State<Pets> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.add, size: height / 30, color:     notifier.getbuttoncolor),
+                    Icon(Icons.add, size: height / 30, color:     const Color(0xffFC9340)),
                     SizedBox(width: width / 50),
                     Text(
                       LanguageEn.addnewpet,
                       style: TextStyle(
-                        color:     notifier.getbuttoncolor,
+                        color:     const Color(0xffFC9340),
                         fontSize: height / 50,
                         fontFamily: 'GilroyMedium',
                       ),
@@ -150,7 +150,7 @@ class _PetsState extends State<Pets> {
                       children: [
                         Text(
                           name,
-                          style: TextStyle(color: notifier.getblack,
+                          style: TextStyle(color: Colors.black,
                             fontSize: height / 40,
                             fontFamily: 'GilroyBold',
                           ),
@@ -158,7 +158,7 @@ class _PetsState extends State<Pets> {
                         Text(
                           subname,
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 50,
                             fontFamily: 'GilroyMedium',
                           ),
@@ -179,7 +179,7 @@ class _PetsState extends State<Pets> {
                         child: Text(
                           buttonname,
                           style: TextStyle(
-                            color:     notifier.getbuttoncolor,
+                            color:     const Color(0xffFC9340),
                             fontSize: height / 65,
                             fontFamily: 'GilroyMedium',
                           ),
@@ -222,7 +222,7 @@ class _PetsState extends State<Pets> {
           Text(
             age,
             style: TextStyle(
-              color: notifier.getgreay,
+              color: Colors.grey,
               fontSize: height / 85,
               fontFamily: 'GilroyMedium',
             ),
@@ -230,7 +230,7 @@ class _PetsState extends State<Pets> {
           Text(
             yr,
             style: TextStyle(
-              color: notifier.getblack,
+              color: Colors.black,
               fontSize: height / 75,
               fontFamily: 'GilroyBold',
             ),
@@ -256,7 +256,7 @@ class _PetsState extends State<Pets> {
           Text(
             age,
             style: TextStyle(
-              color: notifier.getgreay,
+              color: Colors.grey,
               fontSize: height / 85,
               fontFamily: 'GilroyMedium',
             ),
@@ -264,7 +264,7 @@ class _PetsState extends State<Pets> {
           Text(
             yr,
             style: TextStyle(
-              color: notifier.getblack,
+              color: Colors.black,
               fontSize: height / 75,
               fontFamily: 'GilroyBold',
             ),
@@ -290,7 +290,7 @@ class _PetsState extends State<Pets> {
           Text(
             age,
             style: TextStyle(
-              color: notifier.getgreay,
+              color: Colors.grey,
               fontSize: height / 85,
               fontFamily: 'GilroyMedium',
             ),
@@ -298,7 +298,7 @@ class _PetsState extends State<Pets> {
           Text(
             yr,
             style: TextStyle(
-              color: notifier.getblack,
+              color: Colors.black,
               fontSize: height / 75,
               fontFamily: 'GilroyBold',
             ),

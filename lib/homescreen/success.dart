@@ -14,29 +14,29 @@ class Succsess extends StatefulWidget {
 }
 
 class _SuccsessState extends State<Succsess> {
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
 
-   getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //  getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
 
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           SizedBox(height: height / 8),
@@ -50,14 +50,14 @@ class _SuccsessState extends State<Succsess> {
             style: TextStyle(
                 fontSize: height / 33,
                 fontFamily: 'GilroyBold',
-                color: notifier.getblack),
+                color: Colors.black),
           ),
           SizedBox(height: height / 13),
           Text(
             LanguageEn.thakyouforyouyrorder,
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: notifier.getgreay,
+                color: Colors.grey,
                 fontSize: height / 50,
                 fontFamily: 'GilroyMedium'),
           ),
@@ -69,9 +69,9 @@ class _SuccsessState extends State<Succsess> {
             child: Custombutton.button(
               LanguageEn.gotomyorder,
               width / 1.1,
-              notifier.getbuttoncolor,
+              const Color(0xffFC9340),
               Colors.transparent,
-              notifier.getbuttoncolor,
+              const Color(0xffFC9340),
             ),
           ),
         ],

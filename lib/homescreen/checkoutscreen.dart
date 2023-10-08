@@ -25,28 +25,28 @@ class _CheckOutState extends State<CheckOut> {
   bool star2 = false;
   bool star3 = false;
   bool star4 = false;
-  late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -66,7 +66,7 @@ class _CheckOutState extends State<CheckOut> {
                     });
                   },
                   child: Icon(Icons.arrow_back,
-                      size: height / 30, color:  notifier.getbuttoncolor,),
+                      size: height / 30, color:  const Color(0xffFC9340),),
                 ),
               ],
             ),
@@ -77,7 +77,7 @@ class _CheckOutState extends State<CheckOut> {
                 Text(
                   LanguageEn.checkout,
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontFamily: 'GilroyBold',
                     fontSize: height / 25,
                   ),
@@ -91,7 +91,7 @@ class _CheckOutState extends State<CheckOut> {
                 Text(
                   LanguageEn.pleasefinishyourpayment,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 45,
                   ),
@@ -135,7 +135,7 @@ class _CheckOutState extends State<CheckOut> {
                           height: height / 11,
                           width: width / 1.1,
                           decoration:   BoxDecoration(
-                            color:  notifier.getbuttoncolor.withOpacity(0.10),
+                            color:  const Color(0xffFC9340).withOpacity(0.10),
                             borderRadius: const BorderRadius.all(
                               Radius.circular(14),
                             ),
@@ -145,12 +145,12 @@ class _CheckOutState extends State<CheckOut> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(Icons.add,
-                                    size: height / 30, color: notifier.getbuttoncolor,),
+                                    size: height / 30, color: const Color(0xffFC9340),),
                                 SizedBox(width: width / 50),
                                 Text(
                                   LanguageEn.addnewaddress,
                                   style: TextStyle(
-                                    color:  notifier.getbuttoncolor,
+                                    color:  const Color(0xffFC9340),
                                     fontSize: height / 50,
                                     fontFamily: 'GilroyMedium',
                                   ),
@@ -175,8 +175,8 @@ class _CheckOutState extends State<CheckOut> {
                           LanguageEn.next,
                           width / 1.1,
                           Colors.transparent,
-                          notifier.getbuttoncolor,
-                          notifier.getwihite,
+                          const Color(0xffFC9340),
+                          Colors.white,
                         ),
                       ),
                     ],
@@ -192,7 +192,7 @@ class _CheckOutState extends State<CheckOut> {
                             height: height / 11,
                             width: width / 1.1,
                             decoration:   BoxDecoration(
-                              color: notifier.getbuttoncolor.withOpacity(0.10),
+                              color: const Color(0xffFC9340).withOpacity(0.10),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(14),
                               ),
@@ -202,7 +202,7 @@ class _CheckOutState extends State<CheckOut> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.add,
-                                      size: height / 30, color:  notifier.getbuttoncolor,),
+                                      size: height / 30, color:  const Color(0xffFC9340),),
                                   SizedBox(width: width / 50),
                                   Text(
                                     LanguageEn.addnewpayment,
@@ -231,8 +231,8 @@ class _CheckOutState extends State<CheckOut> {
                               LanguageEn.next,
                               width / 1.1,
                               Colors.transparent,
-                              notifier.getbuttoncolor,
-                              notifier.getwihite,
+                              const Color(0xffFC9340),
+                              Colors.white,
                             ),
                           ),
                         ],
@@ -245,7 +245,7 @@ class _CheckOutState extends State<CheckOut> {
                               Text(
                                 LanguageEn.shippingaddress,
                                 style: TextStyle(
-                                  color: notifier.getgreay,
+                                  color: Colors.grey,
                                   fontSize: height / 50,
                                   fontFamily: 'GilroyMedium',
                                 ),
@@ -262,7 +262,7 @@ class _CheckOutState extends State<CheckOut> {
                               Text(
                                 LanguageEn.paymentmethod,
                                 style: TextStyle(
-                                  color: notifier.getgreay,
+                                  color: Colors.grey,
                                   fontSize: height / 50,
                                   fontFamily: 'GilroyMedium',
                                 ),
@@ -278,7 +278,7 @@ class _CheckOutState extends State<CheckOut> {
                               Text(
                                 LanguageEn.orderdetails,
                                 style: TextStyle(
-                                  color: notifier.getgreay,
+                                  color: Colors.grey,
                                   fontSize: height / 50,
                                   fontFamily: 'GilroyMedium',
                                 ),
@@ -314,7 +314,7 @@ class _CheckOutState extends State<CheckOut> {
                                             SizedBox(height: height / 32),
                                             Text(
                                               LanguageEn.elephantdoll,
-                                              style: TextStyle(color: notifier.getblack,
+                                              style: TextStyle(color: Colors.black,
                                                 fontSize: height / 50,
                                                 fontFamily: 'GilroyBold',
                                               ),
@@ -323,7 +323,7 @@ class _CheckOutState extends State<CheckOut> {
                                             Text(
                                               "x1",
                                               style: TextStyle(
-                                                color: notifier.getgreay,
+                                                color: Colors.grey,
                                                 fontSize: height / 50,
                                               ),
                                             ),
@@ -334,7 +334,7 @@ class _CheckOutState extends State<CheckOut> {
                                           "\$54.75",
                                           style: TextStyle(
                                             fontFamily: 'GilroyBold',
-                                            color: notifier.getgreay,
+                                            color: Colors.grey,
                                             fontSize: height / 50,
                                           ),
                                         ),
@@ -360,7 +360,7 @@ class _CheckOutState extends State<CheckOut> {
                                             SizedBox(height: height / 40),
                                             Text(
                                               LanguageEn.petheadcap,
-                                              style: TextStyle(color: notifier.getblack,
+                                              style: TextStyle(color: Colors.black,
                                                 fontSize: height / 50,
                                                 fontFamily: 'GilroyBold',
                                               ),
@@ -369,7 +369,7 @@ class _CheckOutState extends State<CheckOut> {
                                             Text(
                                               "x1",
                                               style: TextStyle(
-                                                color: notifier.getgreay,
+                                                color: Colors.grey,
                                                 fontSize: height / 50,
                                               ),
                                             ),
@@ -380,7 +380,7 @@ class _CheckOutState extends State<CheckOut> {
                                           "\$12.50",
                                           style: TextStyle(
                                             fontFamily: 'GilroyBold',
-                                            color: notifier.getgreay,
+                                            color: Colors.grey,
                                             fontSize: height / 50,
                                           ),
                                         ),
@@ -406,7 +406,7 @@ class _CheckOutState extends State<CheckOut> {
                                             SizedBox(height: height / 50),
                                             Text(
                                               LanguageEn.doggreysweter,
-                                              style: TextStyle(color: notifier.getblack,
+                                              style: TextStyle(color: Colors.black,
                                                 fontSize: height / 50,
                                                 fontFamily: 'GilroyBold',
                                               ),
@@ -415,7 +415,7 @@ class _CheckOutState extends State<CheckOut> {
                                             Text(
                                               "x1",
                                               style: TextStyle(
-                                                color: notifier.getgreay,
+                                                color: Colors.grey,
                                                 fontSize: height / 50,
                                               ),
                                             ),
@@ -426,7 +426,7 @@ class _CheckOutState extends State<CheckOut> {
                                           "\$35.00",
                                           style: TextStyle(
                                             fontFamily: 'GilroyBold',
-                                            color: notifier.getgreay,
+                                            color: Colors.grey,
                                             fontSize: height / 50,
                                           ),
                                         ),
@@ -447,7 +447,7 @@ class _CheckOutState extends State<CheckOut> {
                               height: height / 11,
                               width: width / 1.1,
                               decoration:   BoxDecoration(
-                                color:  notifier.getbuttoncolor.withOpacity(0.10),
+                                color:  const Color(0xffFC9340).withOpacity(0.10),
                                 borderRadius: const BorderRadius.all(
                                   Radius.circular(14),
                                 ),
@@ -457,12 +457,12 @@ class _CheckOutState extends State<CheckOut> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(Icons.discount,
-                                        size: height / 30, color:  notifier.getbuttoncolor,),
+                                        size: height / 30, color:  const Color(0xffFC9340),),
                                     SizedBox(width: width / 50),
                                     Text(
                                       LanguageEn.havepromocode,
                                       style: TextStyle(
-                                        color:  notifier.getbuttoncolor,
+                                        color:  const Color(0xffFC9340),
                                         fontSize: height / 50,
                                         fontFamily: 'GilroyMedium',
                                       ),
@@ -486,7 +486,7 @@ class _CheckOutState extends State<CheckOut> {
                                 LanguageEn.grandtotal,
                                 style: TextStyle(
                                     fontSize: height / 45,
-                                    color: notifier.getblack,
+                                    color: Colors.black,
                                     fontFamily: 'GilroyBold'),
                               ),
                               const Spacer(),
@@ -494,7 +494,7 @@ class _CheckOutState extends State<CheckOut> {
                                 "\$113.29",
                                 style: TextStyle(
                                     fontSize: height / 45,
-                                    color: notifier.getblack,
+                                    color: Colors.black,
                                     fontFamily: 'GilroyBold'),
                               ),
                               SizedBox(width: width / 20),
@@ -509,8 +509,8 @@ class _CheckOutState extends State<CheckOut> {
                               LanguageEn.confirmorder,
                               width / 1.1,
                               Colors.transparent,
-                              notifier.getbuttoncolor,
-                              notifier.getwihite,
+                              const Color(0xffFC9340),
+                              Colors.white,
                             ),
                           ),
                         ],
@@ -527,11 +527,11 @@ class _CheckOutState extends State<CheckOut> {
       context: context, useRootNavigator: true,
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
-        return AlertDialog(backgroundColor: notifier.getcardcolor,
+        return AlertDialog(backgroundColor: Colors.white,
           content: StatefulBuilder(
             builder: (BuildContext context, StateSetter setState) {
               return Container(
-                color: notifier.getcardcolor,
+                color: Colors.white,
                 height: height / 3.8,
                 // width: width / 1.1,
                 child: Column(
@@ -545,14 +545,14 @@ class _CheckOutState extends State<CheckOut> {
                           child: Icon(
                             Icons.cancel,
                             size: height / 35,
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                           ),
                         ),
                         SizedBox(width: width / 7),
                         Text(
                           LanguageEn.promocode,
                           style: TextStyle(
-                            color: notifier.getblack,
+                            color: Colors.black,
                             fontFamily: 'GilroyBold',
                             fontSize: height / 50,
                           ),
@@ -569,7 +569,7 @@ class _CheckOutState extends State<CheckOut> {
                         decoration: InputDecoration(
                           hintText: LanguageEn.enterpromocodehere,
                           suffixIcon: const Icon(Icons.discount),
-                          hintStyle: TextStyle(color: notifier.getgreay),
+                          hintStyle: TextStyle(color: Colors.grey),
                           enabledBorder: const OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(12.0)),
@@ -593,8 +593,8 @@ class _CheckOutState extends State<CheckOut> {
                         LanguageEn.apply,
                         width / 1.1,
                         Colors.transparent,
-                        notifier.getbuttoncolor,
-                        notifier.getwihite,
+                        const Color(0xffFC9340),
+                        Colors.white,
                       ),
                     ),
                   ],
@@ -619,13 +619,13 @@ class _CheckOutState extends State<CheckOut> {
         Text(
           title,
           style: TextStyle(
-              fontSize: height / 45, color: notifier.getgreay, fontFamily: 'GilroyMedium'),
+              fontSize: height / 45, color: Colors.grey, fontFamily: 'GilroyMedium'),
         ),
         const Spacer(),
         Text(
           price,
           style: TextStyle(
-              fontSize: height / 45, color: notifier.getgreay, fontFamily: 'GilroyMedium'),
+              fontSize: height / 45, color: Colors.grey, fontFamily: 'GilroyMedium'),
         ),
         SizedBox(width: width / 20),
       ],
@@ -662,7 +662,7 @@ class _CheckOutState extends State<CheckOut> {
                 Text(
                   name,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontSize: height / 55,
                     fontFamily: 'GilroyMedium',
                   ),
@@ -671,7 +671,7 @@ class _CheckOutState extends State<CheckOut> {
                 Text(
                   subname,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontSize: height / 55,
                     fontFamily: 'GilroyMedium',
                   ),
@@ -727,7 +727,7 @@ class _CheckOutState extends State<CheckOut> {
                 Text(
                   name,
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontSize: height / 48,
                     fontFamily: 'GilroyBold',
                   ),
@@ -736,7 +736,7 @@ class _CheckOutState extends State<CheckOut> {
                 Text(
                   subname,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontSize: height / 55,
                     fontFamily: 'GilroyMedium',
                   ),
@@ -745,7 +745,7 @@ class _CheckOutState extends State<CheckOut> {
             ),
             const Spacer(),
             Radio(
-              activeColor: notifier.getbuttoncolor,
+              activeColor: const Color(0xffFC9340),
               value: val as int,
               groupValue: _groupValue,
               onChanged: (value) {

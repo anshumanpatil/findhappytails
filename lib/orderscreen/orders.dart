@@ -19,28 +19,28 @@ class _OrdersState extends State<Orders> {
     LanguageEn.adoptions,
     LanguageEn.treatment,
   ];
-  late ColorNotifier notifier;
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  //late ColorNotifier notifier;
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           SizedBox(height: height / 17),
@@ -50,7 +50,7 @@ class _OrdersState extends State<Orders> {
               Text(
                 LanguageEn.order,
                 style:
-                    TextStyle(fontFamily: 'GilroyBold', fontSize: height / 30,color: notifier.getblack),
+                    TextStyle(fontFamily: 'GilroyBold', fontSize: height / 30,color: Colors.black),
               ),
             ],
           ),
@@ -63,7 +63,7 @@ class _OrdersState extends State<Orders> {
                 style: TextStyle(
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 50,
-                    color: notifier.getgreay),
+                    color: Colors.grey),
               ),
             ],
           ),
@@ -91,8 +91,8 @@ class _OrdersState extends State<Orders> {
                             width: width / 3.65,
                             decoration: BoxDecoration(
                               color: selectedindex == index
-                                  ?     notifier.getbuttoncolor
-                                  :     notifier.getbuttoncolor.withOpacity(0.10),
+                                  ?     const Color(0xffFC9340)
+                                  :     const Color(0xffFC9340).withOpacity(0.10),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(10),
                               ),
@@ -102,8 +102,8 @@ class _OrdersState extends State<Orders> {
                                 tabsname[index].toString(),
                                 style: TextStyle(
                                     color: selectedindex == index
-                                        ? notifier.getwihite
-                                        :     notifier.getbuttoncolor,
+                                        ? Colors.white
+                                        :     const Color(0xffFC9340),
                                     fontSize: height / 53,
                                     fontFamily: 'GilroyBold'),
                               ),
@@ -193,7 +193,7 @@ class _OrdersState extends State<Orders> {
                 Text(
                   name,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontSize: height / 55,
                     fontFamily: 'GilroyBold',
                   ),
@@ -202,7 +202,7 @@ class _OrdersState extends State<Orders> {
                 Text(
                   subname,
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontSize: height / 45,
                     fontFamily: 'GilroyBold',
                   ),
@@ -211,7 +211,7 @@ class _OrdersState extends State<Orders> {
                 Text(
                   orderdate,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontSize: height / 55,
                     fontFamily: 'GilroyMedium',
                   ),
@@ -226,7 +226,7 @@ class _OrdersState extends State<Orders> {
                 Text(
                   price,
                   style: TextStyle(
-                    color: notifier.getblack,
+                    color: Colors.black,
                     fontSize: height / 40,
                     fontFamily: 'GilroyBold',
                   ),
@@ -234,7 +234,7 @@ class _OrdersState extends State<Orders> {
                 Text(
                   iteams,
                   style: TextStyle(
-                    color: notifier.getgreay,
+                    color: Colors.grey,
                     fontSize: height / 55,
                     fontFamily: 'GilroyMedium',
                   ),

@@ -50,29 +50,29 @@ class _ViewAllState extends State<ViewAll> {
     "Basche",
     "Domino"
   ];
-  late ColorNotifier notifier;
+  //late ColorNotifier notifier;
   RangeValues _currentRangeValues = const RangeValues(20, 25);
-  getdarkmodepreviousstate() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool? previusstate = prefs.getBool("setIsDark");
-    if (previusstate == null) {
-      notifier.setIsDark = false;
-    } else {
-      notifier.setIsDark = previusstate;
-    }
-  }
+  // getdarkmodepreviousstate() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool? previusstate = prefs.getBool("setIsDark");
+  //   if (previusstate == null) {
+  //     notifier.setIsDark = false;
+  //   } else {
+  //     notifier.setIsDark = previusstate;
+  //   }
+  // }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getdarkmodepreviousstate();
+    // getdarkmodepreviousstate();
   }
   @override
   Widget build(BuildContext context) {
-    notifier = Provider.of<ColorNotifier>(context, listen: true);
+    //notifier = Provider.of<ColorNotifier>(context, listen: true);
     return Scaffold(
-      backgroundColor: notifier.getwihite,
+      backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           // Add your onPressed code here!
@@ -83,7 +83,7 @@ class _ViewAllState extends State<ViewAll> {
               onTap: () {
                 _shortbottomsheet();
               },
-              child: Icon(Icons.filter_list, size: height / 30,color: notifier.getwihite,),
+              child: Icon(Icons.filter_list, size: height / 30,color: Colors.white,),
             ),
             SizedBox(width: width / 50),
             GestureDetector(
@@ -93,21 +93,21 @@ class _ViewAllState extends State<ViewAll> {
               child: Text(
                 LanguageEn.sort,
                 style:
-                    TextStyle(fontSize: height / 50, fontFamily: 'GilroyBold',color: notifier.getwihite),
+                    TextStyle(fontSize: height / 50, fontFamily: 'GilroyBold',color: Colors.white),
               ),
             ),
             SizedBox(width: width / 20),
             Container(
               height: height / 20,
               width: width / 250,
-              color: notifier.getwihite.withOpacity(0.3),
+              color: Colors.white.withOpacity(0.3),
             ),
             SizedBox(width: width / 20),
             GestureDetector(
                 onTap: () {
                   _filterbottomsheet();
                 },
-                child: Icon(Icons.filter_alt, size: height / 30,color: notifier.getwihite,)),
+                child: Icon(Icons.filter_alt, size: height / 30,color: Colors.white,)),
             SizedBox(width: width / 50),
             GestureDetector(
               onTap: () {
@@ -116,7 +116,7 @@ class _ViewAllState extends State<ViewAll> {
               child: Text(
                 LanguageEn.filter,
                 style:
-                    TextStyle(fontSize: height / 50, fontFamily: 'GilroyBold',color: notifier.getwihite),
+                    TextStyle(fontSize: height / 50, fontFamily: 'GilroyBold',color: Colors.white),
               ),
             )
           ],
@@ -152,7 +152,7 @@ class _ViewAllState extends State<ViewAll> {
                         ),
                         Text(
                           LanguageEn.sort,
-                          style: TextStyle(color: notifier.getblack,
+                          style: TextStyle(color: Colors.black,
                             fontSize: height / 25,
                             fontFamily: 'GilroyBold',
                           ),
@@ -168,7 +168,7 @@ class _ViewAllState extends State<ViewAll> {
                         Text(
                           LanguageEn.arrangebasedonthe,
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 48,
                             fontFamily: 'GilroyMedium',
                           ),
@@ -198,7 +198,7 @@ class _ViewAllState extends State<ViewAll> {
                                     color: buttoncolor,
                                   ),
                                 ),
-                                checkColor: notifier.getwihite,
+                                checkColor: Colors.white,
                                 activeColor: buttoncolor,
                                 controlAffinity:
                                     ListTileControlAffinity.trailing,
@@ -211,7 +211,7 @@ class _ViewAllState extends State<ViewAll> {
                                       Text(
                                         checkList2Items[index]["title"],
                                         style: TextStyle(
-                                            color: notifier.getblack,
+                                            color: Colors.black,
                                             fontSize: height / 60,
                                             fontFamily: 'GilroyMedium'),
                                       ),
@@ -242,15 +242,15 @@ class _ViewAllState extends State<ViewAll> {
                       children: [
                         SizedBox(width: width / 20),
                         filterbottomsheetbutton(width / 3, Colors.transparent,
-                            notifier.getbuttoncolor, LanguageEn.reset,  notifier.getbuttoncolor),
+                            const Color(0xffFC9340), LanguageEn.reset,  const Color(0xffFC9340)),
                         SizedBox(width: width / 20),
                         GestureDetector(
                           onTap: () {
                             Navigator.pop(context);
                             // Navigator.pushNamed(context, '/Adopt');
                           },
-                          child: filterbottomsheetbutton(width / 2,  notifier.getbuttoncolor,
-                              Colors.transparent, LanguageEn.apply, notifier.getwihite),
+                          child: filterbottomsheetbutton(width / 2,  const Color(0xffFC9340),
+                              Colors.transparent, LanguageEn.apply, Colors.white),
                         ),
                       ],
                     ),
@@ -288,7 +288,7 @@ class _ViewAllState extends State<ViewAll> {
                         ),
                         Text(
                           LanguageEn.filter,
-                          style: TextStyle(color: notifier.getblack,
+                          style: TextStyle(color: Colors.black,
                             fontSize: height / 25,
                             fontFamily: 'GilroyBold',
                           ),
@@ -304,7 +304,7 @@ class _ViewAllState extends State<ViewAll> {
                         Text(
                           LanguageEn.filterproductwithmore,
                           style: TextStyle(
-                            color: notifier.getgreay
+                            color: Colors.grey
                             ,
                             fontSize: height / 48,
                             fontFamily: 'GilroyMedium',
@@ -321,7 +321,7 @@ class _ViewAllState extends State<ViewAll> {
                           style: TextStyle(
                               fontFamily: 'GilroyMedium',
                               fontSize: height / 50,
-                              color: notifier.getgreay),
+                              color: Colors.grey),
                         )
                       ],
                     ),
@@ -353,7 +353,7 @@ class _ViewAllState extends State<ViewAll> {
                         Text(
                           "\$50.00",
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 50,
                             fontFamily: 'GilroyMedium',
                           ),
@@ -362,7 +362,7 @@ class _ViewAllState extends State<ViewAll> {
                         Text(
                           "\$50.00",
                           style: TextStyle(
-                            color: notifier.getgreay,
+                            color: Colors.grey,
                             fontSize: height / 50,
                             fontFamily: 'GilroyMedium',
                           ),
@@ -379,7 +379,7 @@ class _ViewAllState extends State<ViewAll> {
                           style: TextStyle(
                               fontFamily: 'GilroyMedium',
                               fontSize: height / 50,
-                              color: notifier.getgreay),
+                              color: Colors.grey),
                         )
                       ],
                     ),
@@ -426,7 +426,7 @@ class _ViewAllState extends State<ViewAll> {
                                         brand[index],
                                         style: TextStyle(
                                             fontFamily: 'GilroyMedium',
-                                            color: notifier.getblack,
+                                            color: Colors.black,
                                             fontWeight: FontWeight.normal,
                                             fontSize: height / 55),
                                       ),
@@ -444,15 +444,15 @@ class _ViewAllState extends State<ViewAll> {
                       children: [
                         SizedBox(width: width / 20),
                         filterbottomsheetbutton(width / 3, Colors.transparent,
-                          notifier.getbuttoncolor, LanguageEn.reset,  notifier.getbuttoncolor,),
+                          const Color(0xffFC9340), LanguageEn.reset,  const Color(0xffFC9340),),
                         SizedBox(width: width / 20),
                         GestureDetector(
                           onTap: () {
                             Navigator.pop(context);
                             // Navigator.pushNamed(context, '/Adopt');
                           },
-                          child: filterbottomsheetbutton(width / 2,  notifier.getbuttoncolor,
-                              Colors.transparent, LanguageEn.apply, notifier.getwihite),
+                          child: filterbottomsheetbutton(width / 2,  const Color(0xffFC9340),
+                              Colors.transparent, LanguageEn.apply, Colors.white),
                         ),
                       ],
                     ),
