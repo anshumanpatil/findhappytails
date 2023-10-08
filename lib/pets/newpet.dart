@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dotted_border/dotted_border.dart';
+import 'package:findhappytails/pets/searchbreed.dart';
 import 'package:flutter/material.dart';
 import 'package:findhappytails/custtomscreen/button.dart';
 import 'package:findhappytails/custtomscreen/textfild.dart';
@@ -20,14 +21,129 @@ class NewPet extends StatefulWidget {
 }
 
 class _NewPetState extends State<NewPet> {
-  PickedFile? imageFile;
-  String dropdownvalue = 'Bulldog';
+  XFile? imageFile;
+  String dropdownvalue = 'Other';
   int _groupValue = 0;
+  bool isCustomBreedVisible = true;
+  final _picker = ImagePicker();
+
   var items = [
-    'Bulldog',
-    'Pug',
-    'Bichon Frise',
-    'Labrador',
+    'Other',
+    'affenpinscher',
+    'Afghan hound',
+    'Airedale terrier',
+    'Akita',
+    'Alaskan Malamute',
+    'American Staffordshire terrier',
+    'American water spaniel',
+    'Australian cattle dog',
+    'Australian shepherd',
+    'Australian terrier',
+    'basenji',
+    'basset hound',
+    'beagle',
+    'bearded collie',
+    'Bedlington terrier',
+    'Bernese mountain dog',
+    'bichon frise',
+    'black and tan coonhound',
+    'bloodhound',
+    'border collie',
+    'border terrier',
+    'borzoi',
+    'Boston terrier',
+    'bouvier des Flandres',
+    'boxer',
+    'briard',
+    'Brittany',
+    'Brussels griffon',
+    'bull terrier',
+    'bulldog',
+    'bullmastiff',
+    'cairn terrier',
+    'Canaan dog',
+    'Chesapeake Bay retriever',
+    'Chihuahua',
+    'Chinese crested',
+    'Chinese shar-pei',
+    'chow chow',
+    'Clumber spaniel',
+    'cocker spaniel',
+    'collie',
+    'curly-coated retriever',
+    'dachshund',
+    'Dalmatian',
+    'Doberman pinscher',
+    'English cocker spaniel',
+    'English setter',
+    'English springer spaniel',
+    'English toy spaniel',
+    'Eskimo dog',
+    'Finnish spitz',
+    'flat-coated retriever',
+    'fox terrier',
+    'foxhound',
+    'French bulldog',
+    'German shepherd',
+    'German shorthaired pointer',
+    'German wirehaired pointer',
+    'golden retriever',
+    'Gordon setter',
+    'Great Dane',
+    'greyhound',
+    'Irish setter',
+    'Irish water spaniel',
+    'Irish wolfhound',
+    'Jack Russell terrier',
+    'Japanese spaniel',
+    'keeshond',
+    'Kerry blue terrier',
+    'komondor',
+    'kuvasz',
+    'Labrador retriever',
+    'Lakeland terrier',
+    'Lhasa apso',
+    'Maltese',
+    'Manchester terrier',
+    'mastiff',
+    'Mexican hairless',
+    'Newfoundland',
+    'Norwegian elkhound',
+    'Norwich terrier',
+    'otterhound',
+    'papillon',
+    'Pekingese',
+    'pointer',
+    'Pomeranian',
+    'poodle',
+    'pug',
+    'puli',
+    'Rhodesian ridgeback',
+    'Rottweiler',
+    'Saint Bernard',
+    'saluki',
+    'Samoyed',
+    'schipperke',
+    'schnauzer',
+    'Scottish deerhound',
+    'Scottish terrier',
+    'Sealyham terrier',
+    'Shetland sheepdog',
+    'shih tzu',
+    'Siberian husky',
+    'silky terrier',
+    'Skye terrier',
+    'Staffordshire bull terrier',
+    'soft-coated wheaten terrier',
+    'Sussex spaniel',
+    'spitz',
+    'Tibetan terrier',
+    'vizsla',
+    'Weimaraner',
+    'Welsh terrier',
+    'West Highland white terrier',
+    'whippet',
+    'Yorkshire terrier',
   ];
 
   // getdarkmodepreviousstate() async {
@@ -149,65 +265,79 @@ class _NewPetState extends State<NewPet> {
               ],
             ),
             SizedBox(height: height / 80),
+            // Container(
+            //   color: Colors.transparent,
+            //   height: height / 12,
+            //   width: width / 1.1,
+            //   child: DropdownButtonFormField(
+            //     dropdownColor: Colors.white,
+            //     decoration: InputDecoration(
+            //       floatingLabelBehavior: FloatingLabelBehavior.always,
+            //       contentPadding:
+            //           const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+            //       disabledBorder: OutlineInputBorder(
+            //         borderRadius: BorderRadius.circular(15),
+            //       ),
+            //       hintStyle: TextStyle(
+            //           color: const Color(0xffE0E0E0), fontSize: height / 60),
+            //       border: OutlineInputBorder(
+            //         borderRadius: BorderRadius.circular(15),
+            //       ),
+            //       enabledBorder: OutlineInputBorder(
+            //         borderSide:
+            //             const BorderSide(color: Color(0xffE0E0E0), width: 1),
+            //         borderRadius: BorderRadius.circular(15),
+            //       ),
+            //       focusedBorder: OutlineInputBorder(
+            //         borderSide:
+            //             const BorderSide(color: Color(0xffE0E0E0), width: 1),
+            //         borderRadius: BorderRadius.circular(15),
+            //       ),
+            //     ),
+            //     // Initial Value
+            //     value: dropdownvalue,
+            //
+            //     // Down Arrow Icon
+            //     icon: Row(
+            //       children: const [
+            //         // SizedBox(width: width / 100),
+            //         Icon(
+            //           Icons.keyboard_arrow_down,
+            //           color: Color(0xffE0E0E0),
+            //         ),
+            //       ],
+            //     ),
+            //
+            //     // Array list of items
+            //     items: items.map((String items) {
+            //       return DropdownMenuItem(
+            //         value: items,
+            //         child: Text(
+            //           items,
+            //           style: TextStyle(
+            //               color: Colors.black, fontFamily: 'GilroyMedium'),
+            //         ),
+            //       );
+            //     }).toList(),
+            //     // After selecting the desired option,it will
+            //     // change button value to selected value
+            //     onChanged: (String? newValue) {
+            //       setState(() {
+            //         dropdownvalue = newValue!;
+            //       });
+            //     },
+            //   ),
+            // ),
             Container(
-              color: Colors.transparent,
-              height: height / 12,
-              width: width / 1.1,
-              child: DropdownButtonFormField(
-                dropdownColor: Colors.white,
-                decoration: InputDecoration(
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  contentPadding:
-                      const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  hintStyle: TextStyle(
-                      color: const Color(0xffE0E0E0), fontSize: height / 60),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        const BorderSide(color: Color(0xffE0E0E0), width: 1),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        const BorderSide(color: Color(0xffE0E0E0), width: 1),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                // Initial Value
-                value: dropdownvalue,
-
-                // Down Arrow Icon
-                icon: Row(
-                  children: const [
-                    // SizedBox(width: width / 100),
-                    Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Color(0xffE0E0E0),
-                    ),
-                  ],
-                ),
-
-                // Array list of items
-                items: items.map((String items) {
-                  return DropdownMenuItem(
-                    value: items,
-                    child: Text(
-                      items,
-                      style: TextStyle(
-                          color: Colors.black, fontFamily: 'GilroyMedium'),
-                    ),
-                  );
-                }).toList(),
-                // After selecting the desired option,it will
-                // change button value to selected value
-                onChanged: (String? newValue) {
+              margin: const EdgeInsets.symmetric(horizontal: 33),
+              child: BreedDropDown(
+                selctedBreed: dropdownvalue,
+                list: items,
+                onBreedChanged: (String v) {
+                  if(v == "Other") isCustomBreedVisible = true;
                   setState(() {
-                    dropdownvalue = newValue!;
+                    // isResultVisible = false;
+                    // selectedSourceCountry = v;
                   });
                 },
               ),
@@ -216,18 +346,18 @@ class _NewPetState extends State<NewPet> {
             Row(
               children: [
                 SizedBox(width: width / 20),
-                Text(
+                isCustomBreedVisible ? Text(
                   LanguageEn.breed,
                   style: TextStyle(
                     color: Colors.grey,
                     fontFamily: 'GilroyMedium',
                     fontSize: height / 55,
                   ),
-                ),
+                ) : SizedBox(height: 0),
               ],
             ),
             SizedBox(height: height / 80),
-            CustoomTextfild(LanguageEn.breed),
+            isCustomBreedVisible ? CustoomTextfild(LanguageEn.breed) : SizedBox(height: 0),
             SizedBox(height: height / 80),
             Row(
               children: [
@@ -344,7 +474,7 @@ class _NewPetState extends State<NewPet> {
               children: [
                 SizedBox(width: width / 20),
                 Text(
-                  LanguageEn.weight,
+                  LanguageEn.details,
                   style: TextStyle(
                     color: Colors.grey,
                     fontFamily: 'GilroyMedium',
@@ -464,7 +594,7 @@ class _NewPetState extends State<NewPet> {
           GestureDetector(
             onTap: () {
               setState(() {
-                // _openCamera(context);
+                _openCamera(context);
               });
             },
             child: ClipRRect(
@@ -534,15 +664,13 @@ class _NewPetState extends State<NewPet> {
     );
   }
 
-// void _openCamera(BuildContext context) async {
-//   PickedFile? file = await ImagePicker().getImage(
-//     source: ImageSource.gallery,
-//   );
-//   // final pickedFile = await ImagePicker().getImage(
-//   //   source: ImageSource.gallery,
-//   // );
-//   setState(() {
-//     imageFile = file!;
-//   });
-// }
+void _openCamera(BuildContext context) async {
+  // PickedFile? file = await ImagePicker().getImage(
+  //   source: ImageSource.gallery,
+  // );
+  var pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+  setState(() {
+    imageFile = pickedFile != null ? pickedFile : null;
+  });
+}
 }

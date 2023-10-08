@@ -62,7 +62,7 @@ class LanguageEn {
 
   static String get description => "Description";
 
-  static String get shareabouthestory => "Share about he story";
+  static String get shareabouthestory => "Share about the story";
 
   static String get save => "Save";
 
@@ -208,6 +208,8 @@ class LanguageEn {
   static String get age => "Age";
 
   static String get weight => "Weight";
+
+  static String get details => "Details";
 
   static String get sex => "Sex";
 
